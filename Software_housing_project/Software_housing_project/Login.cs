@@ -27,7 +27,7 @@ namespace Software_housing_project
             switch (text)
             {
                 case "Employee": isEmployee = true; break;
-                default: isEmployee = false; break;
+                case "Student" : isEmployee = false; break;
             }
             mf = new MainForm();
             mf.Visible = true;
