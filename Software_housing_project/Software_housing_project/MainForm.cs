@@ -15,6 +15,7 @@ namespace Software_housing_project
         public MainForm()
         {
             InitializeComponent();
+            
         }
     }
 }
