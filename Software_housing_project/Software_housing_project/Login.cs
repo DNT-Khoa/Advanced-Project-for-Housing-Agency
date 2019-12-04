@@ -13,7 +13,7 @@ namespace Software_housing_project
     public partial class Login : Form
     {
         public static bool isEmployee = false;
-        MainForm mf;
+        StudentForm mf;
 
         public Login()
         {
@@ -29,7 +29,7 @@ namespace Software_housing_project
                 case "Employee": isEmployee = true; break;
                 case "Student" : isEmployee = false; break;
             }
-            mf = new MainForm();
+            mf = new StudentForm();
             mf.Visible = true;
         }
     }

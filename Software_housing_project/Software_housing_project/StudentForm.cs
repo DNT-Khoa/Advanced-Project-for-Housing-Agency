@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Software_housing_project
 {
-    public partial class MainForm : Form
+    public partial class StudentForm : Form
     {
-        public MainForm()
+        public StudentForm()
         {
             InitializeComponent();
         }
