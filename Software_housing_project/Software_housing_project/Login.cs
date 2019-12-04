@@ -14,6 +14,7 @@ namespace Software_housing_project
     {
         public static bool isEmployee = false;
         StudentForm mf;
+        EmployeeForm ef;
 
         public Login()
         {
@@ -26,11 +27,16 @@ namespace Software_housing_project
             string text = cbxUserType.Text;
             switch (text)
             {
-                case "Employee": isEmployee = true; break;
-                case "Student" : isEmployee = false; break;
+                case "Employee":
+                    isEmployee = true;
+                    ef = new EmployeeForm();
+                    ef.Visible = true;
+                    break;
+                case "Student" : isEmployee = false;
+                    mf = new StudentForm();
+                    mf.Visible = true;
+                    break;
             }
-            mf = new StudentForm();
-            mf.Visible = true;
         }
     }
 }
