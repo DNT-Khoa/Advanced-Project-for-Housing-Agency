@@ -15,7 +15,8 @@ namespace Software_housing_project
         public MainForm()
         {
             InitializeComponent();
-            
+            Student student = new Student("Daniel", "abc", 19, "Fontys", "ICT");
+            MessageBox.Show(student.GetInfo());
         }
     }
 }

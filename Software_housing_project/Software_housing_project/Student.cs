@@ -9,32 +9,32 @@ namespace Software_housing_project
     class Student
     {
         static int idCounter = 0;
-        private string firstName { get; set; }
-        private string lastName { get; set; }
-        private int idNumber { get; }
-        private int age { get; set; }
-        private string school { get; set; }
-        private string course { get; set; }
-        private int nrOfComplaintsMade {get; set;}
+        private string FirstName { get; set; }
+        private string LastName { get; set; }
+        private int IdNumber { get; }
+        private int Age { get; set; }
+        private string School { get; set; }
+        private string Course { get; set; }
+        private int ComplaintsMade {get; set;}
         
         public Student(string firstName, string lastName, int age, string school,
             string course)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.idNumber = idCounter++;
-            this.age = age;
-            this.school = school;
-            this.course = course;
-            this.nrOfComplaintsMade = 0;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.IdNumber = idCounter++;
+            this.Age = age;
+            this.School = school;
+            this.Course = course;
+            this.ComplaintsMade = 0;
         }
 
         public string GetInfo()
         {
-            return $"First Name: {this.firstName}\nLast Name: {lastName}\n" +
-                $"ID Number : {this.idNumber}\nAge: {this.age} \n" +
-                $"School: {this.school}\nCourse: {this.course} \n" +
-                $"Complaints made: {nrOfComplaintsMade}";
+            return $"First Name: {this.FirstName}\nLast Name: {LastName}\n" +
+                $"ID Number : {this.IdNumber}\nAge: {this.Age} \n" +
+                $"School: {this.School}\nCourse: {this.Course} \n" +
+                $"Complaints made: {this.ComplaintsMade}";
         }
 
 
