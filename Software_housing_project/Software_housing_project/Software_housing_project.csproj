@@ -53,6 +53,7 @@
     <Compile Include="EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Events.cs" />
     <Compile Include="House.cs" />
     <Compile Include="StudentForm.cs">
       <SubType>Form</SubType>

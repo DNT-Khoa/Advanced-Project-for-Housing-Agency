@@ -9,13 +9,13 @@ namespace Software_housing_project
     class Student
     {
         static int idCounter = 0;
-        private string FirstName { get; set; }
-        private string LastName { get; set; }
-        private int IdNumber { get; }
-        private int Age { get; set; }
-        private string School { get; set; }
-        private string Course { get; set; }
-        private int ComplaintsMade {get; set;}
+        public string FirstName {  get; }
+        public string LastName { get; }
+        public int IdNumber { get; }
+        private int Age;
+        private string School;
+        private string Course;
+        private int ComplaintsMade;
         
         public Student(string firstName, string lastName, int age, string school,
             string course)
