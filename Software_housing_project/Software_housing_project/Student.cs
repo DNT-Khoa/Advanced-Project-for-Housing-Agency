@@ -9,14 +9,15 @@ namespace Software_housing_project
     class Student
     {
         static int idCounter = 0;
-        public string FirstName {  get; }
-        public string LastName { get; }
-        public int IdNumber { get; }
         private int Age;
         private string School;
         private string Course;
         private int ComplaintsMade;
-        
+
+        public string FirstName { get; }
+        public string LastName { get; }
+        public int IdNumber { get; }
+
         public Student(string firstName, string lastName, int age, string school,
             string course)
         {
@@ -36,7 +37,5 @@ namespace Software_housing_project
                 $"School: {this.School}\nCourse: {this.Course} \n" +
                 $"Complaints made: {this.ComplaintsMade}";
         }
-
-
     }
 }

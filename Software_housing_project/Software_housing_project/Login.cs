@@ -32,7 +32,8 @@ namespace Software_housing_project
                     ef = new EmployeeForm();
                     ef.Visible = true;
                     break;
-                case "Student" : isEmployee = false;
+                case "Student" :
+                    isEmployee = false;
                     mf = new StudentForm();
                     mf.Visible = true;
                     break;
