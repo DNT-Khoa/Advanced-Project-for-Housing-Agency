@@ -33,7 +33,17 @@
             this.tpComplaints = new System.Windows.Forms.TabPage();
             this.tpRules = new System.Windows.Forms.TabPage();
             this.tpTenants = new System.Windows.Forms.TabPage();
+            this.lbxChores = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbxComplaints = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.btnClearSelected = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
+            this.tpChores.SuspendLayout();
+            this.tpComplaints.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -50,6 +60,8 @@
             // 
             // tpChores
             // 
+            this.tpChores.Controls.Add(this.label1);
+            this.tpChores.Controls.Add(this.lbxChores);
             this.tpChores.Location = new System.Drawing.Point(4, 22);
             this.tpChores.Name = "tpChores";
             this.tpChores.Padding = new System.Windows.Forms.Padding(3);
@@ -60,6 +72,12 @@
             // 
             // tpComplaints
             // 
+            this.tpComplaints.Controls.Add(this.btnClearSelected);
+            this.tpComplaints.Controls.Add(this.btnClearAll);
+            this.tpComplaints.Controls.Add(this.btnNext);
+            this.tpComplaints.Controls.Add(this.btnPrevious);
+            this.tpComplaints.Controls.Add(this.label2);
+            this.tpComplaints.Controls.Add(this.lbxComplaints);
             this.tpComplaints.Location = new System.Drawing.Point(4, 22);
             this.tpComplaints.Name = "tpComplaints";
             this.tpComplaints.Padding = new System.Windows.Forms.Padding(3);
@@ -89,6 +107,76 @@
             this.tpTenants.Text = "Tenants";
             this.tpTenants.UseVisualStyleBackColor = true;
             // 
+            // lbxChores
+            // 
+            this.lbxChores.FormattingEnabled = true;
+            this.lbxChores.Location = new System.Drawing.Point(257, 100);
+            this.lbxChores.Name = "lbxChores";
+            this.lbxChores.Size = new System.Drawing.Size(229, 264);
+            this.lbxChores.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(339, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Chores List";
+            // 
+            // lbxComplaints
+            // 
+            this.lbxComplaints.FormattingEnabled = true;
+            this.lbxComplaints.Location = new System.Drawing.Point(207, 62);
+            this.lbxComplaints.Name = "lbxComplaints";
+            this.lbxComplaints.Size = new System.Drawing.Size(256, 264);
+            this.lbxComplaints.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(302, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Complaints";
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Location = new System.Drawing.Point(207, 351);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(75, 23);
+            this.btnPrevious.TabIndex = 2;
+            this.btnPrevious.Text = "Previous";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(388, 351);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.TabIndex = 3;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            // 
+            // btnClearAll
+            // 
+            this.btnClearAll.Location = new System.Drawing.Point(589, 351);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(75, 23);
+            this.btnClearAll.TabIndex = 4;
+            this.btnClearAll.Text = "Clear All";
+            this.btnClearAll.UseVisualStyleBackColor = true;
+            // 
+            // btnClearSelected
+            // 
+            this.btnClearSelected.Location = new System.Drawing.Point(496, 175);
+            this.btnClearSelected.Name = "btnClearSelected";
+            this.btnClearSelected.Size = new System.Drawing.Size(72, 40);
+            this.btnClearSelected.TabIndex = 5;
+            this.btnClearSelected.Text = "Clear\r\nSelected";
+            this.btnClearSelected.UseVisualStyleBackColor = true;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,6 +187,10 @@
             this.Text = "HouseMate";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tpChores.ResumeLayout(false);
+            this.tpChores.PerformLayout();
+            this.tpComplaints.ResumeLayout(false);
+            this.tpComplaints.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -110,5 +202,13 @@
         private System.Windows.Forms.TabPage tpComplaints;
         private System.Windows.Forms.TabPage tpRules;
         private System.Windows.Forms.TabPage tpTenants;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lbxChores;
+        private System.Windows.Forms.Button btnClearSelected;
+        private System.Windows.Forms.Button btnClearAll;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox lbxComplaints;
     }
 }

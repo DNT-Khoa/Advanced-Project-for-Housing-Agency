@@ -25,17 +25,19 @@ namespace Software_housing_project
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             string text = cbxUserType.Text;
+            //To close the login form after logging in use the following command.
+            //this.Hide();
             switch (text)
             {
                 case "Employee":
                     isEmployee = true;
                     ef = new EmployeeForm();
-                    ef.Visible = true;
+                    ef.Show();
                     break;
                 case "Student" :
                     isEmployee = false;
                     mf = new StudentForm();
-                    mf.Visible = true;
+                    mf.Show();
                     break;
             }
         }
