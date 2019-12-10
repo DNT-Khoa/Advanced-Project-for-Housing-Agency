@@ -47,13 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chore.cs" />
+    <Compile Include="Complaint.cs" />
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Events.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="House.cs" />
     <Compile Include="StudentForm.cs">
       <SubType>Form</SubType>

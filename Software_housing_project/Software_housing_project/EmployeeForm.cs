@@ -21,5 +21,10 @@ namespace Software_housing_project
         {
 
         }
+
+        private void updateRules()
+        {
+            House.updateRules();
+        }
     }
 }

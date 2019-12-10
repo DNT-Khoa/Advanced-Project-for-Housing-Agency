@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Software_housing_project
 {
-    class Events
+    public class Event
     {
         private string hostName;
-        private int hostID;
+       // private int hostID;
         private string title;
         private string description;
         private string date;
 
-        public Events(Student student, string title, string date, string description)
+        public Event(string hostName, string title, string date, string description)
         {
-            this.hostName = student.FirstName + " " + student.LastName;
-            this.hostID = student.IdNumber;
+            this.hostName = hostName;
+            //this.hostID = student.IdNumber;
             this.title = title;
             this.description = description;
             this.date = date;
@@ -25,8 +25,8 @@ namespace Software_housing_project
 
         public string GetInfo()
         {
-            return $"Event: {this.title}\nDescription: {this.description}\n" +
-                $"Host name: {this.hostName}\nHost ID: {this.hostID}";
+            return $"Event: {this.title}\n\nDescription: {this.description}\n\n" +
+                $"Host name: {this.hostName}";
         }
     }
 }

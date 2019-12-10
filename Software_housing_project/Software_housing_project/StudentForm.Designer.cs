@@ -45,16 +45,16 @@
             this.tpRules = new System.Windows.Forms.TabPage();
             this.lbxRules = new System.Windows.Forms.ListBox();
             this.tpEvents = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnShowInfoEvent = new System.Windows.Forms.Button();
             this.btnAddEvent = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbEventDescription = new System.Windows.Forms.RichTextBox();
             this.tbxEventTitle = new System.Windows.Forms.TextBox();
             this.tbxStudentID = new System.Windows.Forms.TextBox();
             this.tbxStudentName = new System.Windows.Forms.TextBox();
             this.mcEvents = new System.Windows.Forms.MonthCalendar();
             this.clbEvents = new System.Windows.Forms.CheckedListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tcTabControl.SuspendLayout();
             this.tpChores.SuspendLayout();
             this.tpComplaints.SuspendLayout();
@@ -71,7 +71,7 @@
             this.tcTabControl.Location = new System.Drawing.Point(3, 12);
             this.tcTabControl.Name = "tcTabControl";
             this.tcTabControl.SelectedIndex = 0;
-            this.tcTabControl.Size = new System.Drawing.Size(633, 353);
+            this.tcTabControl.Size = new System.Drawing.Size(728, 353);
             this.tcTabControl.TabIndex = 0;
             // 
             // tpChores
@@ -84,7 +84,7 @@
             this.tpChores.Location = new System.Drawing.Point(4, 22);
             this.tpChores.Name = "tpChores";
             this.tpChores.Padding = new System.Windows.Forms.Padding(3);
-            this.tpChores.Size = new System.Drawing.Size(625, 327);
+            this.tpChores.Size = new System.Drawing.Size(720, 327);
             this.tpChores.TabIndex = 0;
             this.tpChores.Text = "Chores";
             this.tpChores.UseVisualStyleBackColor = true;
@@ -92,10 +92,10 @@
             // clbChores
             // 
             this.clbChores.FormattingEnabled = true;
-            this.clbChores.Location = new System.Drawing.Point(390, 31);
+            this.clbChores.Location = new System.Drawing.Point(401, 31);
             this.clbChores.Margin = new System.Windows.Forms.Padding(2);
             this.clbChores.Name = "clbChores";
-            this.clbChores.Size = new System.Drawing.Size(198, 244);
+            this.clbChores.Size = new System.Drawing.Size(302, 244);
             this.clbChores.TabIndex = 4;
             // 
             // btnAddChore
@@ -107,11 +107,13 @@
             this.btnAddChore.TabIndex = 3;
             this.btnAddChore.Text = "Add Chore";
             this.btnAddChore.UseVisualStyleBackColor = true;
+            this.btnAddChore.Click += new System.EventHandler(this.btnAddChore_Click);
             // 
             // mcChore
             // 
             this.mcChore.Location = new System.Drawing.Point(165, 31);
             this.mcChore.Margin = new System.Windows.Forms.Padding(7);
+            this.mcChore.MaxSelectionCount = 1;
             this.mcChore.Name = "mcChore";
             this.mcChore.TabIndex = 2;
             // 
@@ -121,7 +123,7 @@
             this.cbxChore.Location = new System.Drawing.Point(17, 63);
             this.cbxChore.Margin = new System.Windows.Forms.Padding(2);
             this.cbxChore.Name = "cbxChore";
-            this.cbxChore.Size = new System.Drawing.Size(108, 21);
+            this.cbxChore.Size = new System.Drawing.Size(139, 21);
             this.cbxChore.TabIndex = 1;
             this.cbxChore.Text = "Chore";
             // 
@@ -131,7 +133,7 @@
             this.cbxName.Location = new System.Drawing.Point(17, 31);
             this.cbxName.Margin = new System.Windows.Forms.Padding(2);
             this.cbxName.Name = "cbxName";
-            this.cbxName.Size = new System.Drawing.Size(108, 21);
+            this.cbxName.Size = new System.Drawing.Size(139, 21);
             this.cbxName.TabIndex = 0;
             this.cbxName.Text = "Your Name";
             // 
@@ -146,20 +148,21 @@
             this.tpComplaints.Location = new System.Drawing.Point(4, 22);
             this.tpComplaints.Name = "tpComplaints";
             this.tpComplaints.Padding = new System.Windows.Forms.Padding(3);
-            this.tpComplaints.Size = new System.Drawing.Size(625, 327);
+            this.tpComplaints.Size = new System.Drawing.Size(720, 327);
             this.tpComplaints.TabIndex = 1;
             this.tpComplaints.Text = "Complaints";
             this.tpComplaints.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(551, 279);
+            this.btnNext.Location = new System.Drawing.Point(635, 279);
             this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(56, 19);
             this.btnNext.TabIndex = 5;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevious
             // 
@@ -170,13 +173,14 @@
             this.btnPrevious.TabIndex = 4;
             this.btnPrevious.Text = "Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // rtbComplaints
             // 
             this.rtbComplaints.Location = new System.Drawing.Point(427, 20);
             this.rtbComplaints.Margin = new System.Windows.Forms.Padding(2);
             this.rtbComplaints.Name = "rtbComplaints";
-            this.rtbComplaints.Size = new System.Drawing.Size(181, 244);
+            this.rtbComplaints.Size = new System.Drawing.Size(264, 244);
             this.rtbComplaints.TabIndex = 3;
             this.rtbComplaints.Text = "Complaint";
             // 
@@ -196,6 +200,7 @@
             this.btnFileComplaint.TabIndex = 1;
             this.btnFileComplaint.Text = "File Complaint";
             this.btnFileComplaint.UseVisualStyleBackColor = true;
+            this.btnFileComplaint.Click += new System.EventHandler(this.btnFileComplaint_Click);
             // 
             // rtbDescription
             // 
@@ -213,7 +218,7 @@
             this.tpRules.Margin = new System.Windows.Forms.Padding(2);
             this.tpRules.Name = "tpRules";
             this.tpRules.Padding = new System.Windows.Forms.Padding(2);
-            this.tpRules.Size = new System.Drawing.Size(625, 327);
+            this.tpRules.Size = new System.Drawing.Size(720, 327);
             this.tpRules.TabIndex = 2;
             this.tpRules.Text = "Rules";
             this.tpRules.UseVisualStyleBackColor = true;
@@ -221,7 +226,7 @@
             // lbxRules
             // 
             this.lbxRules.FormattingEnabled = true;
-            this.lbxRules.Location = new System.Drawing.Point(171, 31);
+            this.lbxRules.Location = new System.Drawing.Point(225, 31);
             this.lbxRules.Margin = new System.Windows.Forms.Padding(2);
             this.lbxRules.Name = "lbxRules";
             this.lbxRules.Size = new System.Drawing.Size(282, 277);
@@ -233,7 +238,7 @@
             this.tpEvents.Controls.Add(this.label1);
             this.tpEvents.Controls.Add(this.btnShowInfoEvent);
             this.tpEvents.Controls.Add(this.btnAddEvent);
-            this.tpEvents.Controls.Add(this.richTextBox1);
+            this.tpEvents.Controls.Add(this.rtbEventDescription);
             this.tpEvents.Controls.Add(this.tbxEventTitle);
             this.tpEvents.Controls.Add(this.tbxStudentID);
             this.tpEvents.Controls.Add(this.tbxStudentName);
@@ -241,10 +246,28 @@
             this.tpEvents.Controls.Add(this.clbEvents);
             this.tpEvents.Location = new System.Drawing.Point(4, 22);
             this.tpEvents.Name = "tpEvents";
-            this.tpEvents.Size = new System.Drawing.Size(625, 327);
+            this.tpEvents.Size = new System.Drawing.Size(720, 327);
             this.tpEvents.TabIndex = 3;
             this.tpEvents.Text = "Events";
             this.tpEvents.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(552, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Events";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(261, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Select Date";
             // 
             // btnShowInfoEvent
             // 
@@ -254,6 +277,7 @@
             this.btnShowInfoEvent.TabIndex = 7;
             this.btnShowInfoEvent.Text = "Show Info";
             this.btnShowInfoEvent.UseVisualStyleBackColor = true;
+            this.btnShowInfoEvent.Click += new System.EventHandler(this.btnShowInfoEvent_Click);
             // 
             // btnAddEvent
             // 
@@ -263,14 +287,15 @@
             this.btnAddEvent.TabIndex = 6;
             this.btnAddEvent.Text = "Add Event";
             this.btnAddEvent.UseVisualStyleBackColor = true;
+            this.btnAddEvent.Click += new System.EventHandler(this.btnAddEvent_Click);
             // 
-            // richTextBox1
+            // rtbEventDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(14, 185);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(155, 109);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "Description";
+            this.rtbEventDescription.Location = new System.Drawing.Point(14, 185);
+            this.rtbEventDescription.Name = "rtbEventDescription";
+            this.rtbEventDescription.Size = new System.Drawing.Size(155, 109);
+            this.rtbEventDescription.TabIndex = 5;
+            this.rtbEventDescription.Text = "Description";
             // 
             // tbxEventTitle
             // 
@@ -307,32 +332,14 @@
             this.clbEvents.FormattingEnabled = true;
             this.clbEvents.Location = new System.Drawing.Point(416, 53);
             this.clbEvents.Name = "clbEvents";
-            this.clbEvents.Size = new System.Drawing.Size(179, 154);
+            this.clbEvents.Size = new System.Drawing.Size(288, 154);
             this.clbEvents.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(261, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Select Date";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(484, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Events";
             // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 366);
+            this.ClientSize = new System.Drawing.Size(733, 366);
             this.Controls.Add(this.tcTabControl);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StudentForm";
@@ -368,7 +375,7 @@
         private System.Windows.Forms.TabPage tpEvents;
         private System.Windows.Forms.Button btnShowInfoEvent;
         private System.Windows.Forms.Button btnAddEvent;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbEventDescription;
         private System.Windows.Forms.TextBox tbxEventTitle;
         private System.Windows.Forms.TextBox tbxStudentID;
         private System.Windows.Forms.TextBox tbxStudentName;
