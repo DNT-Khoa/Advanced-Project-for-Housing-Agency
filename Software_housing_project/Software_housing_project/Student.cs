@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Software_housing_project
 {    
-    public class Student
+    public class Student : House
     {
         static int idCounter = 0;
         private int Age;

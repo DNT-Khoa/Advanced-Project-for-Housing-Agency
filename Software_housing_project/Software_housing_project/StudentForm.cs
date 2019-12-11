@@ -111,6 +111,7 @@ namespace Software_housing_project
                 Complaint complaint = new Complaint(selectedDate, rtbDescription.Text);
                 House.complaints.Add(complaint);
                 rtbComplaints.Text = complaint.GetInfo();
+                House.updateComplaints();
             }
         }
 
@@ -172,6 +173,12 @@ namespace Software_housing_project
             int index = clbEvents.SelectedIndex;
             string info = House.events[index].GetInfo();
             MessageBox.Show(info);
+        }
+
+        public void updateComplaints()
+        {
+            rtbComplaints.Clear();
+            rtbComplaints.Text = House.complaints[complaintTracker].GetInfo();
         }
     }
 }
