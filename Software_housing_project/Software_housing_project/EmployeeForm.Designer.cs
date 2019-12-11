@@ -41,9 +41,31 @@
             this.lbxComplaints = new System.Windows.Forms.ListBox();
             this.tpRules = new System.Windows.Forms.TabPage();
             this.tpTenants = new System.Windows.Forms.TabPage();
+            this.rtbRulesToAdd = new System.Windows.Forms.RichTextBox();
+            this.btnAddToList = new System.Windows.Forms.Button();
+            this.lbxRules = new System.Windows.Forms.ListBox();
+            this.btnRemoveAll = new System.Windows.Forms.Button();
+            this.btnRemoveSelected = new System.Windows.Forms.Button();
+            this.tbxFirstName = new System.Windows.Forms.TextBox();
+            this.tbxLastName = new System.Windows.Forms.TextBox();
+            this.tbxSchool = new System.Windows.Forms.TextBox();
+            this.tbxCourse = new System.Windows.Forms.TextBox();
+            this.tbxAge = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnAddTenant = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbxTenants = new System.Windows.Forms.ListBox();
+            this.btnShowInfo = new System.Windows.Forms.Button();
+            this.btnRemoveTenant = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpChores.SuspendLayout();
             this.tpComplaints.SuspendLayout();
+            this.tpRules.SuspendLayout();
+            this.tpTenants.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -158,6 +180,11 @@
             // 
             // tpRules
             // 
+            this.tpRules.Controls.Add(this.btnRemoveSelected);
+            this.tpRules.Controls.Add(this.btnRemoveAll);
+            this.tpRules.Controls.Add(this.lbxRules);
+            this.tpRules.Controls.Add(this.btnAddToList);
+            this.tpRules.Controls.Add(this.rtbRulesToAdd);
             this.tpRules.Location = new System.Drawing.Point(4, 22);
             this.tpRules.Margin = new System.Windows.Forms.Padding(2);
             this.tpRules.Name = "tpRules";
@@ -169,6 +196,21 @@
             // 
             // tpTenants
             // 
+            this.tpTenants.Controls.Add(this.btnRemoveTenant);
+            this.tpTenants.Controls.Add(this.btnShowInfo);
+            this.tpTenants.Controls.Add(this.lbxTenants);
+            this.tpTenants.Controls.Add(this.label9);
+            this.tpTenants.Controls.Add(this.btnAddTenant);
+            this.tpTenants.Controls.Add(this.label8);
+            this.tpTenants.Controls.Add(this.label7);
+            this.tpTenants.Controls.Add(this.label6);
+            this.tpTenants.Controls.Add(this.label4);
+            this.tpTenants.Controls.Add(this.label3);
+            this.tpTenants.Controls.Add(this.tbxAge);
+            this.tpTenants.Controls.Add(this.tbxCourse);
+            this.tpTenants.Controls.Add(this.tbxSchool);
+            this.tpTenants.Controls.Add(this.tbxLastName);
+            this.tpTenants.Controls.Add(this.tbxFirstName);
             this.tpTenants.Location = new System.Drawing.Point(4, 22);
             this.tpTenants.Name = "tpTenants";
             this.tpTenants.Padding = new System.Windows.Forms.Padding(3);
@@ -176,6 +218,179 @@
             this.tpTenants.TabIndex = 3;
             this.tpTenants.Text = "Tenants";
             this.tpTenants.UseVisualStyleBackColor = true;
+            // 
+            // rtbRulesToAdd
+            // 
+            this.rtbRulesToAdd.Location = new System.Drawing.Point(17, 46);
+            this.rtbRulesToAdd.Name = "rtbRulesToAdd";
+            this.rtbRulesToAdd.Size = new System.Drawing.Size(331, 237);
+            this.rtbRulesToAdd.TabIndex = 0;
+            this.rtbRulesToAdd.Text = "";
+            // 
+            // btnAddToList
+            // 
+            this.btnAddToList.Location = new System.Drawing.Point(120, 314);
+            this.btnAddToList.Name = "btnAddToList";
+            this.btnAddToList.Size = new System.Drawing.Size(97, 48);
+            this.btnAddToList.TabIndex = 1;
+            this.btnAddToList.Text = "Add To List";
+            this.btnAddToList.UseVisualStyleBackColor = true;
+            this.btnAddToList.Click += new System.EventHandler(this.btnAddToList_Click);
+            // 
+            // lbxRules
+            // 
+            this.lbxRules.FormattingEnabled = true;
+            this.lbxRules.Location = new System.Drawing.Point(455, 46);
+            this.lbxRules.Name = "lbxRules";
+            this.lbxRules.Size = new System.Drawing.Size(291, 238);
+            this.lbxRules.TabIndex = 2;
+            // 
+            // btnRemoveAll
+            // 
+            this.btnRemoveAll.Location = new System.Drawing.Point(481, 314);
+            this.btnRemoveAll.Name = "btnRemoveAll";
+            this.btnRemoveAll.Size = new System.Drawing.Size(107, 48);
+            this.btnRemoveAll.TabIndex = 3;
+            this.btnRemoveAll.Text = "Remove All";
+            this.btnRemoveAll.UseVisualStyleBackColor = true;
+            this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
+            // 
+            // btnRemoveSelected
+            // 
+            this.btnRemoveSelected.Location = new System.Drawing.Point(617, 314);
+            this.btnRemoveSelected.Name = "btnRemoveSelected";
+            this.btnRemoveSelected.Size = new System.Drawing.Size(105, 48);
+            this.btnRemoveSelected.TabIndex = 4;
+            this.btnRemoveSelected.Text = "Remove Selected";
+            this.btnRemoveSelected.UseVisualStyleBackColor = true;
+            this.btnRemoveSelected.Click += new System.EventHandler(this.btnRemoveSelected_Click);
+            // 
+            // tbxFirstName
+            // 
+            this.tbxFirstName.Location = new System.Drawing.Point(89, 78);
+            this.tbxFirstName.Name = "tbxFirstName";
+            this.tbxFirstName.Size = new System.Drawing.Size(118, 20);
+            this.tbxFirstName.TabIndex = 0;
+            // 
+            // tbxLastName
+            // 
+            this.tbxLastName.Location = new System.Drawing.Point(309, 78);
+            this.tbxLastName.Name = "tbxLastName";
+            this.tbxLastName.Size = new System.Drawing.Size(128, 20);
+            this.tbxLastName.TabIndex = 1;
+            // 
+            // tbxSchool
+            // 
+            this.tbxSchool.Location = new System.Drawing.Point(89, 152);
+            this.tbxSchool.Name = "tbxSchool";
+            this.tbxSchool.Size = new System.Drawing.Size(128, 20);
+            this.tbxSchool.TabIndex = 3;
+            // 
+            // tbxCourse
+            // 
+            this.tbxCourse.Location = new System.Drawing.Point(309, 152);
+            this.tbxCourse.Name = "tbxCourse";
+            this.tbxCourse.Size = new System.Drawing.Size(118, 20);
+            this.tbxCourse.TabIndex = 4;
+            // 
+            // tbxAge
+            // 
+            this.tbxAge.Location = new System.Drawing.Point(194, 232);
+            this.tbxAge.Name = "tbxAge";
+            this.tbxAge.Size = new System.Drawing.Size(128, 20);
+            this.tbxAge.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 85);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "First Name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(245, 85);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Last Name";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 155);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "School";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(245, 155);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Course";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(162, 239);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(26, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Age";
+            // 
+            // btnAddTenant
+            // 
+            this.btnAddTenant.Location = new System.Drawing.Point(206, 341);
+            this.btnAddTenant.Name = "btnAddTenant";
+            this.btnAddTenant.Size = new System.Drawing.Size(107, 40);
+            this.btnAddTenant.TabIndex = 12;
+            this.btnAddTenant.Text = "Add Tenant";
+            this.btnAddTenant.UseVisualStyleBackColor = true;
+            this.btnAddTenant.Click += new System.EventHandler(this.btnAddTenant_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(623, 41);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 13);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Tenants";
+            // 
+            // lbxTenants
+            // 
+            this.lbxTenants.FormattingEnabled = true;
+            this.lbxTenants.Location = new System.Drawing.Point(527, 78);
+            this.lbxTenants.Name = "lbxTenants";
+            this.lbxTenants.Size = new System.Drawing.Size(230, 238);
+            this.lbxTenants.TabIndex = 14;
+            // 
+            // btnShowInfo
+            // 
+            this.btnShowInfo.Location = new System.Drawing.Point(527, 341);
+            this.btnShowInfo.Name = "btnShowInfo";
+            this.btnShowInfo.Size = new System.Drawing.Size(107, 40);
+            this.btnShowInfo.TabIndex = 15;
+            this.btnShowInfo.Text = "Show Info";
+            this.btnShowInfo.UseVisualStyleBackColor = true;
+            this.btnShowInfo.Click += new System.EventHandler(this.btnShowInfo_Click);
+            // 
+            // btnRemoveTenant
+            // 
+            this.btnRemoveTenant.Location = new System.Drawing.Point(650, 341);
+            this.btnRemoveTenant.Name = "btnRemoveTenant";
+            this.btnRemoveTenant.Size = new System.Drawing.Size(107, 40);
+            this.btnRemoveTenant.TabIndex = 16;
+            this.btnRemoveTenant.Text = "Remove Tenant";
+            this.btnRemoveTenant.UseVisualStyleBackColor = true;
+            this.btnRemoveTenant.Click += new System.EventHandler(this.btnRemoveTenant_Click);
             // 
             // EmployeeForm
             // 
@@ -191,6 +406,9 @@
             this.tpChores.PerformLayout();
             this.tpComplaints.ResumeLayout(false);
             this.tpComplaints.PerformLayout();
+            this.tpRules.ResumeLayout(false);
+            this.tpTenants.ResumeLayout(false);
+            this.tpTenants.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -210,5 +428,25 @@
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lbxComplaints;
+        private System.Windows.Forms.Button btnRemoveSelected;
+        private System.Windows.Forms.Button btnRemoveAll;
+        private System.Windows.Forms.ListBox lbxRules;
+        private System.Windows.Forms.Button btnAddToList;
+        private System.Windows.Forms.RichTextBox rtbRulesToAdd;
+        private System.Windows.Forms.Button btnRemoveTenant;
+        private System.Windows.Forms.Button btnShowInfo;
+        private System.Windows.Forms.ListBox lbxTenants;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnAddTenant;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbxAge;
+        private System.Windows.Forms.TextBox tbxCourse;
+        private System.Windows.Forms.TextBox tbxSchool;
+        private System.Windows.Forms.TextBox tbxLastName;
+        private System.Windows.Forms.TextBox tbxFirstName;
     }
 }
