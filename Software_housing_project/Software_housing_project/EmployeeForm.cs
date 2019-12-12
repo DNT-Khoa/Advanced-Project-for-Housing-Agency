@@ -35,6 +35,14 @@ namespace Software_housing_project
             rtbComplaint.Text = House.complaints[complaintsIndex].GetInfo();
         }
 
+        public void updateChores()
+        {
+            lbxChores.Items.Clear();
+            foreach (var chore in House.chores)
+            {
+                lbxChores.Items.Add(chore.GetInfo());
+            }
+        }
 
         private void btnAddToList_Click(object sender, EventArgs e)
         {

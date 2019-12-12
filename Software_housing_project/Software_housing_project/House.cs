@@ -41,5 +41,9 @@ namespace Software_housing_project
             ef.updateComplaints();
             sf.updateComplaints();
         }
+        public static void updateChores()
+        {
+            ef.updateChores();
+        }
     }
 }
