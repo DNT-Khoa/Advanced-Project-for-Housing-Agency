@@ -111,6 +111,7 @@ namespace Software_housing_project
                 Complaint complaint = new Complaint(selectedDate, rtbDescription.Text);
                 House.complaints.Add(complaint);
                 rtbComplaints.Text = complaint.GetInfo();
+                House.updateComplaints();
             }
         }
 
