@@ -97,7 +97,6 @@
             this.clbChores.Name = "clbChores";
             this.clbChores.Size = new System.Drawing.Size(302, 244);
             this.clbChores.TabIndex = 4;
-            this.clbChores.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbChores_ItemCheck);
             // 
             // btnAddChore
             // 
