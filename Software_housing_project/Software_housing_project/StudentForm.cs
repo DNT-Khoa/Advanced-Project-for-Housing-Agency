@@ -45,15 +45,33 @@ namespace Software_housing_project
             }
             else
             {
-                Chore chore = new Chore(cbxChore.SelectedItem.ToString(), cbxName.SelectedItem.ToString(), selectedDate);
+                if (choreIsValid(cbxChore.SelectedItem.ToString(), cbxName.SelectedItem.ToString(), selectedDate))
+                {
+                    Chore chore = new Chore(cbxChore.SelectedItem.ToString(), cbxName.SelectedItem.ToString(), selectedDate);
 
-                House.chores.Add(chore);
+                    House.chores.Add(chore);
 
-                clbChores.Items.Add(chore.GetInfo());
+                    clbChores.Items.Add(chore.GetInfo());
 
-                House.updateChores();
+                    House.updateChores();
+                } else
+                {
+                    MessageBox.Show("The same person should not do the same chore on the same day more than one time ! Do you think so ?");
+                }
+                
+            }    
+        }
+
+        private bool choreIsValid(string choreName, string studentName, string choreDate)
+        {
+            foreach(Chore chore in House.chores)
+            {
+                if (chore.getChoreDescription() == choreName && chore.getChoreStudentName() == studentName && chore.getChoreDate() == choreDate)
+                {
+                    return false;
+                } 
             }
-           
+            return true;
         }
         //Rules page
         public void updateRules()
