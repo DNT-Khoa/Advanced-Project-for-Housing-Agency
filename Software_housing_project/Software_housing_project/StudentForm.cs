@@ -77,9 +77,9 @@ namespace Software_housing_project
             }
             return internalRules;
         }
-
-        private void UpdateCheckBoxStudentsName()
+        public void UpdateCheckBoxStudentsName()
         {
+            cbxName.Items.Clear();
             foreach (var student in House.tenants)
             {
                 cbxName.Items.Add($"{student.FirstName} -- Id:{student.IdNumber}");

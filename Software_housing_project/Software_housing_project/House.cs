@@ -34,12 +34,21 @@ namespace Software_housing_project
         public static void updateRules()
         {
             sf.updateRules();
+            ef.updateRules();
         }
 
         public static void updateComplaints()
         {
             ef.updateComplaints();
             sf.updateComplaints();
+        }
+
+        public static void UpdateCheckBoxStudentsName()
+        {
+            foreach (var student in House.tenants)
+            {
+                sf.UpdateCheckBoxStudentsName();
+            }
         }
 
     }
