@@ -34,6 +34,7 @@ namespace Software_housing_project
         public static void updateRules()
         {
             sf.updateRules();
+            ef.updateRules();
         }
 
         public static void updateComplaints()
@@ -41,9 +42,21 @@ namespace Software_housing_project
             ef.updateComplaints();
             sf.updateComplaints();
         }
+
+
+        public static void UpdateCheckBoxStudentsName()
+        {
+            foreach (var student in House.tenants)
+            {
+                sf.UpdateCheckBoxStudentsName();
+            }
+        }
+
+
         public static void updateChores()
         {
             ef.updateChores();
         }
+
     }
 }
