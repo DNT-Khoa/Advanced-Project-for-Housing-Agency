@@ -173,5 +173,12 @@ namespace Software_housing_project
             string info = House.events[index].GetInfo();
             MessageBox.Show(info);
         }
+
+
+        public void updateComplaints()
+        {
+            rtbComplaints.Clear();
+            rtbComplaints.Text = House.complaints[complaintTracker].GetInfo();
+        }
     }
 }

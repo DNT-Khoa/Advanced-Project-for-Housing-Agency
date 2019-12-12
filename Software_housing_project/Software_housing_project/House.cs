@@ -35,5 +35,12 @@ namespace Software_housing_project
         {
             sf.updateRules();
         }
+
+        public static void updateComplaints()
+        {
+            ef.updateComplaints();
+            sf.updateComplaints();
+        }
+
     }
 }
