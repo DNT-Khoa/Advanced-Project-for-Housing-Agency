@@ -50,8 +50,8 @@ namespace Software_housing_project
                 House.chores.Add(chore);
 
                 clbChores.Items.Add(chore.GetInfo());
+
             }
-           
         }
         //Rules page
         public void updateRules()
@@ -148,7 +148,6 @@ namespace Software_housing_project
                 else
                 {
                     complaintTracker = 0;
-                    
                 }
             }
             else
@@ -172,6 +171,12 @@ namespace Software_housing_project
             int index = clbEvents.SelectedIndex;
             string info = House.events[index].GetInfo();
             MessageBox.Show(info);
+        }
+
+        private void clbChores_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            clbChores.Items.RemoveAt(e.Index);
+            House.chores.RemoveAt(e.Index);
         }
     }
 }

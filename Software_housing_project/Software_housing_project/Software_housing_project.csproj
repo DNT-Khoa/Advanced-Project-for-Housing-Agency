@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Chore.cs" />
     <Compile Include="Complaint.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
