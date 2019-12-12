@@ -183,12 +183,7 @@ namespace Software_housing_project
             rtbComplaints.Clear();
             rtbComplaints.Text = House.complaints[complaintTracker].GetInfo();
         }
-
-        private void clbChores_SelectedIndexChanged(object sender, EventArgs e)
-        {
-                
-        }
-
+        
         private void clbChores_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             if (clbChores.CheckedItems.Count > 0)

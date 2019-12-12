@@ -100,7 +100,6 @@
             this.clbChores.Size = new System.Drawing.Size(401, 293);
             this.clbChores.TabIndex = 4;
             this.clbChores.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbChores_ItemCheck);
-            this.clbChores.SelectedIndexChanged += new System.EventHandler(this.clbChores_SelectedIndexChanged);
             // 
             // btnAddChore
             // 
