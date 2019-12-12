@@ -50,6 +50,8 @@ namespace Software_housing_project
                 House.chores.Add(chore);
 
                 clbChores.Items.Add(chore.GetInfo());
+
+                House.updateChores();
             }
            
         }
