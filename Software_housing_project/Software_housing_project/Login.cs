@@ -13,6 +13,8 @@ namespace Software_housing_project
     public partial class Login : Form
     {
         private bool isEmployee = false;
+        private bool isOpenEmployee = false;
+        private bool isOpenStudent = false;
         House house = new House();
 
         public Login()
@@ -30,12 +32,21 @@ namespace Software_housing_project
             {
                 case "Employee":
                     isEmployee = true;
+                    if (!isOpenEmployee)
+                    {
+                        house.Login(isEmployee);
+                    }
                     break;
                 case "Student" :
                     isEmployee = false;
+                    if (!isOpenStudent)
+                    {
+                        house.Login(isEmployee);
+                    }
                     break;
             }
-            house.Login(isEmployee);
+
+            
         }
     }
 }
