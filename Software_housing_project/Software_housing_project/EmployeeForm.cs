@@ -79,8 +79,14 @@ namespace Software_housing_project
 
         private void btnRemoveAll_Click(object sender, EventArgs e)
         {
-            House.rules.Clear();
-            House.updateRules();
+            if (lbxRules.Items.Count == 0)
+            {
+                MessageBox.Show("There's nothing left to be removed!");
+            } else
+            {
+                House.rules.Clear();
+                House.updateRules();
+            }      
         }
 
         private void btnRemoveSelected_Click(object sender, EventArgs e)
