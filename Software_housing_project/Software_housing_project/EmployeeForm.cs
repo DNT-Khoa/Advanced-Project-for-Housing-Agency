@@ -135,15 +135,28 @@ namespace Software_housing_project
             else
             {
                 tenantAge = Convert.ToInt32(tbxAge.Text);
-                House.tenants.Add(new Student(tenantFirstName, tenantLastName, tenantAge, tenantSchool, tenantCourse));
-                lbxTenants.Items.Add($"{tenantFirstName} {tenantLastName} ID: {House.tenants[House.tenants.Count - 1].IdNumber}");
-                House.UpdateCheckBoxStudentsName();
-                
-                tbxFirstName.Text = "";
-                tbxLastName.Text = "";
-                tbxSchool.Text = "";
-                tbxCourse.Text = "";
-                tbxAge.Text = "";
+                if (tenantAge <= 0)
+                {
+                    MessageBox.Show("Either you are not existing or you are making a mistake !?");
+                    tbxAge.Text = "";
+                }
+                else if (tenantAge > 100)
+                {
+                    MessageBox.Show("You are way too old to rent a room in our agency!");
+                    tbxAge.Text = "";
+                }
+                else
+                {
+                    House.tenants.Add(new Student(tenantFirstName, tenantLastName, tenantAge, tenantSchool, tenantCourse));
+                    lbxTenants.Items.Add($"{tenantFirstName} {tenantLastName} ID: {House.tenants[House.tenants.Count - 1].IdNumber}");
+                    House.UpdateCheckBoxStudentsName();
+
+                    tbxFirstName.Text = "";
+                    tbxLastName.Text = "";
+                    tbxSchool.Text = "";
+                    tbxCourse.Text = "";
+                    tbxAge.Text = "";
+                }
             }
         }
 
