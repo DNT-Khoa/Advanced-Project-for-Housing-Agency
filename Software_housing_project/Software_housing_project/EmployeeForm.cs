@@ -105,12 +105,13 @@ namespace Software_housing_project
         private void btnAddTenant_Click(object sender, EventArgs e)
         {
             string tenantFirstName, tenantLastName, tenantSchool, tenantCourse;
-            int tenantAge;
+            int tenantAge, numberToCheck;
             tenantFirstName = tbxFirstName.Text;
             tenantLastName = tbxLastName.Text;
             tenantSchool = tbxSchool.Text;
             tenantCourse = tbxCourse.Text;
-            tenantAge = Convert.ToInt32(tbxAge.Text);
+            
+            bool isInteger = int.TryParse(tbxAge.Text, out numberToCheck);
 
             if (tenantFirstName == "")
             {
@@ -127,8 +128,13 @@ namespace Software_housing_project
             } else if (tbxAge.Text == "")
             {
                 MessageBox.Show("I wonder what is the name of the tenant ?");
-            } else
+            } else if (!isInteger)
             {
+                MessageBox.Show("The age you enter is not an integer !");
+            } 
+            else
+            {
+                tenantAge = Convert.ToInt32(tbxAge.Text);
                 House.tenants.Add(new Student(tenantFirstName, tenantLastName, tenantAge, tenantSchool, tenantCourse));
                 lbxTenants.Items.Add($"{tenantFirstName} {tenantLastName} ID: {House.tenants[House.tenants.Count - 1].IdNumber}");
                 House.UpdateCheckBoxStudentsName();
