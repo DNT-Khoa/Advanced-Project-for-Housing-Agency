@@ -88,7 +88,7 @@
             this.tpChores.TabIndex = 0;
             this.tpChores.Text = "Chores";
             this.tpChores.UseVisualStyleBackColor = true;
-            this.tpChores.DoubleClick += new System.EventHandler(this.tpChores_DoubleClick);
+           
             // 
             // btnAddChore
             // 

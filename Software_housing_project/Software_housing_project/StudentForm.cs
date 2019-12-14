@@ -30,7 +30,7 @@ namespace Software_housing_project
         private void btnAddChore_Click(object sender, EventArgs e)
         {
             string selectedDate = mcChore.SelectionRange.Start.ToShortDateString();
-
+            int result = DateTime.Compare(mcChore.SelectionRange.Start, mcChore.TodayDate);
             if (cbxName.SelectedIndex == -1)
             {
                 MessageBox.Show("Select a correct student name!");
@@ -42,6 +42,9 @@ namespace Software_housing_project
             else if(String.Compare(selectedDate, string.Empty) == 0)
             {
                 MessageBox.Show("Select a correct date!");
+            } else if (result < 0)
+            {
+                MessageBox.Show("You cannot choose a date from the past! It doesn't make sense.");
             }
             else
             {
@@ -202,15 +205,7 @@ namespace Software_housing_project
             rtbComplaints.Text = House.complaints[complaintTracker].GetInfo();
         }
         
-        private void clbChores_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-           
-        }
-
-        private void tpChores_DoubleClick(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void clbChores_DoubleClick(object sender, EventArgs e)
         {
