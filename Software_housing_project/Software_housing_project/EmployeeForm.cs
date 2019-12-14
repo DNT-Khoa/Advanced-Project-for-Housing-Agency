@@ -28,13 +28,14 @@ namespace Software_housing_project
         public void updateRules()
         {
             List<string> internalRules = GetRules();
-
+            int lineIndex = 0;
             if (internalRules != House.rules)
             {
                 lbxRules.Items.Clear();
                 foreach (string rule in House.rules)
                 {
-                    lbxRules.Items.Add(rule);
+                    lbxRules.Items.Add(lineIndex.ToString() + ". " + rule);
+                    lineIndex++;
                 }
             }
         }
