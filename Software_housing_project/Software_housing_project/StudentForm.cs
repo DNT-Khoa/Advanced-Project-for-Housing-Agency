@@ -204,15 +204,19 @@ namespace Software_housing_project
         
         private void clbChores_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            //if (clbChores.CheckedItems.Count > 0)
-            //{
-            //    if (clbChores.SelectedIndex == clbChores.CheckedIndices[0])
-            //    {
-            //        House.chores.RemoveAt(clbChores.SelectedIndex);
-            //        clbChores.Items.RemoveAt(clbChores.SelectedIndex);
-            //    }
-            //}
+           
         }
-        //END OF FILE
+
+        private void tpChores_DoubleClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void clbChores_DoubleClick(object sender, EventArgs e)
+        {
+            House.chores.RemoveAt(this.clbChores.SelectedIndex);
+            this.clbChores.Items.Remove(this.clbChores.SelectedItem);
+            House.updateChores();
+        }
     }
 }

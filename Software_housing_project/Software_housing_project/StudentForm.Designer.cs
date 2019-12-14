@@ -30,7 +30,6 @@
         {
             this.tcTabControl = new System.Windows.Forms.TabControl();
             this.tpChores = new System.Windows.Forms.TabPage();
-            this.clbChores = new System.Windows.Forms.CheckedListBox();
             this.btnAddChore = new System.Windows.Forms.Button();
             this.mcChore = new System.Windows.Forms.MonthCalendar();
             this.cbxChore = new System.Windows.Forms.ComboBox();
@@ -55,6 +54,7 @@
             this.tbxStudentName = new System.Windows.Forms.TextBox();
             this.mcEvents = new System.Windows.Forms.MonthCalendar();
             this.clbEvents = new System.Windows.Forms.CheckedListBox();
+            this.clbChores = new System.Windows.Forms.ListBox();
             this.tcTabControl.SuspendLayout();
             this.tpChores.SuspendLayout();
             this.tpComplaints.SuspendLayout();
@@ -88,16 +88,7 @@
             this.tpChores.TabIndex = 0;
             this.tpChores.Text = "Chores";
             this.tpChores.UseVisualStyleBackColor = true;
-            // 
-            // clbChores
-            // 
-            this.clbChores.FormattingEnabled = true;
-            this.clbChores.Location = new System.Drawing.Point(401, 31);
-            this.clbChores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.clbChores.Name = "clbChores";
-            this.clbChores.Size = new System.Drawing.Size(302, 229);
-            this.clbChores.TabIndex = 4;
-            this.clbChores.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbChores_ItemCheck);
+            this.tpChores.DoubleClick += new System.EventHandler(this.tpChores_DoubleClick);
             // 
             // btnAddChore
             // 
@@ -336,6 +327,15 @@
             this.clbEvents.Size = new System.Drawing.Size(288, 139);
             this.clbEvents.TabIndex = 0;
             // 
+            // clbChores
+            // 
+            this.clbChores.FormattingEnabled = true;
+            this.clbChores.Location = new System.Drawing.Point(412, 31);
+            this.clbChores.Name = "clbChores";
+            this.clbChores.Size = new System.Drawing.Size(302, 225);
+            this.clbChores.TabIndex = 4;
+            this.clbChores.DoubleClick += new System.EventHandler(this.clbChores_DoubleClick);
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,7 +361,6 @@
         private System.Windows.Forms.TabPage tpChores;
         private System.Windows.Forms.TabPage tpComplaints;
         private System.Windows.Forms.TabPage tpRules;
-        private System.Windows.Forms.CheckedListBox clbChores;
         private System.Windows.Forms.Button btnAddChore;
         private System.Windows.Forms.MonthCalendar mcChore;
         private System.Windows.Forms.ComboBox cbxChore;
@@ -384,6 +383,7 @@
         private System.Windows.Forms.CheckedListBox clbEvents;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox clbChores;
     }
 }
 
