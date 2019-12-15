@@ -45,14 +45,13 @@
             this.tpRules = new System.Windows.Forms.TabPage();
             this.lbxRules = new System.Windows.Forms.ListBox();
             this.tpEvents = new System.Windows.Forms.TabPage();
+            this.cbxEventHost = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnShowInfoEvent = new System.Windows.Forms.Button();
             this.btnAddEvent = new System.Windows.Forms.Button();
             this.rtbEventDescription = new System.Windows.Forms.RichTextBox();
             this.tbxEventTitle = new System.Windows.Forms.TextBox();
-            this.tbxStudentID = new System.Windows.Forms.TextBox();
-            this.tbxStudentName = new System.Windows.Forms.TextBox();
             this.mcEvents = new System.Windows.Forms.MonthCalendar();
             this.clbEvents = new System.Windows.Forms.CheckedListBox();
             this.tcTabControl.SuspendLayout();
@@ -69,7 +68,7 @@
             this.tcTabControl.Controls.Add(this.tpRules);
             this.tcTabControl.Controls.Add(this.tpEvents);
             this.tcTabControl.Location = new System.Drawing.Point(4, 15);
-            this.tcTabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tcTabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tcTabControl.Name = "tcTabControl";
             this.tcTabControl.SelectedIndex = 0;
             this.tcTabControl.Size = new System.Drawing.Size(971, 434);
@@ -83,21 +82,20 @@
             this.tpChores.Controls.Add(this.cbxChore);
             this.tpChores.Controls.Add(this.cbxName);
             this.tpChores.Location = new System.Drawing.Point(4, 25);
-            this.tpChores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpChores.Margin = new System.Windows.Forms.Padding(4);
             this.tpChores.Name = "tpChores";
-            this.tpChores.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpChores.Padding = new System.Windows.Forms.Padding(4);
             this.tpChores.Size = new System.Drawing.Size(963, 405);
             this.tpChores.TabIndex = 0;
             this.tpChores.Text = "Chores";
             this.tpChores.UseVisualStyleBackColor = true;
-            this.tpChores.DoubleClick += new System.EventHandler(this.tpChores_DoubleClick);
             // 
             // clbChores
             // 
             this.clbChores.FormattingEnabled = true;
             this.clbChores.ItemHeight = 16;
             this.clbChores.Location = new System.Drawing.Point(549, 38);
-            this.clbChores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clbChores.Margin = new System.Windows.Forms.Padding(4);
             this.clbChores.Name = "clbChores";
             this.clbChores.Size = new System.Drawing.Size(401, 276);
             this.clbChores.TabIndex = 4;
@@ -150,9 +148,9 @@
             this.tpComplaints.Controls.Add(this.btnFileComplaint);
             this.tpComplaints.Controls.Add(this.rtbDescription);
             this.tpComplaints.Location = new System.Drawing.Point(4, 25);
-            this.tpComplaints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpComplaints.Margin = new System.Windows.Forms.Padding(4);
             this.tpComplaints.Name = "tpComplaints";
-            this.tpComplaints.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpComplaints.Padding = new System.Windows.Forms.Padding(4);
             this.tpComplaints.Size = new System.Drawing.Size(963, 405);
             this.tpComplaints.TabIndex = 1;
             this.tpComplaints.Text = "Complaints";
@@ -187,7 +185,7 @@
             this.rtbComplaints.Name = "rtbComplaints";
             this.rtbComplaints.Size = new System.Drawing.Size(351, 299);
             this.rtbComplaints.TabIndex = 3;
-            this.rtbComplaints.Text = "Complaint";
+            this.rtbComplaints.Text = "Complaints";
             // 
             // mcComplaint
             // 
@@ -214,6 +212,7 @@
             this.rtbDescription.Size = new System.Drawing.Size(224, 299);
             this.rtbDescription.TabIndex = 0;
             this.rtbDescription.Text = "Description";
+            this.rtbDescription.Click += new System.EventHandler(this.rtbDescription_Click);
             // 
             // tpRules
             // 
@@ -239,23 +238,30 @@
             // 
             // tpEvents
             // 
+            this.tpEvents.Controls.Add(this.cbxEventHost);
             this.tpEvents.Controls.Add(this.label2);
             this.tpEvents.Controls.Add(this.label1);
             this.tpEvents.Controls.Add(this.btnShowInfoEvent);
             this.tpEvents.Controls.Add(this.btnAddEvent);
             this.tpEvents.Controls.Add(this.rtbEventDescription);
             this.tpEvents.Controls.Add(this.tbxEventTitle);
-            this.tpEvents.Controls.Add(this.tbxStudentID);
-            this.tpEvents.Controls.Add(this.tbxStudentName);
             this.tpEvents.Controls.Add(this.mcEvents);
             this.tpEvents.Controls.Add(this.clbEvents);
             this.tpEvents.Location = new System.Drawing.Point(4, 25);
-            this.tpEvents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpEvents.Margin = new System.Windows.Forms.Padding(4);
             this.tpEvents.Name = "tpEvents";
             this.tpEvents.Size = new System.Drawing.Size(963, 405);
             this.tpEvents.TabIndex = 3;
             this.tpEvents.Text = "Events";
             this.tpEvents.UseVisualStyleBackColor = true;
+            // 
+            // cbxEventHost
+            // 
+            this.cbxEventHost.FormattingEnabled = true;
+            this.cbxEventHost.Location = new System.Drawing.Point(19, 60);
+            this.cbxEventHost.Name = "cbxEventHost";
+            this.cbxEventHost.Size = new System.Drawing.Size(132, 24);
+            this.cbxEventHost.TabIndex = 10;
             // 
             // label2
             // 
@@ -280,7 +286,7 @@
             // btnShowInfoEvent
             // 
             this.btnShowInfoEvent.Location = new System.Drawing.Point(623, 334);
-            this.btnShowInfoEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowInfoEvent.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowInfoEvent.Name = "btnShowInfoEvent";
             this.btnShowInfoEvent.Size = new System.Drawing.Size(100, 28);
             this.btnShowInfoEvent.TabIndex = 7;
@@ -291,7 +297,7 @@
             // btnAddEvent
             // 
             this.btnAddEvent.Location = new System.Drawing.Point(236, 334);
-            this.btnAddEvent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddEvent.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddEvent.Name = "btnAddEvent";
             this.btnAddEvent.Size = new System.Drawing.Size(100, 28);
             this.btnAddEvent.TabIndex = 6;
@@ -302,38 +308,22 @@
             // rtbEventDescription
             // 
             this.rtbEventDescription.Location = new System.Drawing.Point(19, 228);
-            this.rtbEventDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rtbEventDescription.Margin = new System.Windows.Forms.Padding(4);
             this.rtbEventDescription.Name = "rtbEventDescription";
             this.rtbEventDescription.Size = new System.Drawing.Size(205, 133);
             this.rtbEventDescription.TabIndex = 5;
             this.rtbEventDescription.Text = "Description";
+            this.rtbEventDescription.Click += new System.EventHandler(this.rtbEventDescription_Click);
             // 
             // tbxEventTitle
             // 
-            this.tbxEventTitle.Location = new System.Drawing.Point(19, 156);
-            this.tbxEventTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbxEventTitle.Location = new System.Drawing.Point(19, 145);
+            this.tbxEventTitle.Margin = new System.Windows.Forms.Padding(4);
             this.tbxEventTitle.Name = "tbxEventTitle";
             this.tbxEventTitle.Size = new System.Drawing.Size(132, 22);
             this.tbxEventTitle.TabIndex = 4;
             this.tbxEventTitle.Text = "Event Title";
-            // 
-            // tbxStudentID
-            // 
-            this.tbxStudentID.Location = new System.Drawing.Point(19, 101);
-            this.tbxStudentID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbxStudentID.Name = "tbxStudentID";
-            this.tbxStudentID.Size = new System.Drawing.Size(132, 22);
-            this.tbxStudentID.TabIndex = 3;
-            this.tbxStudentID.Text = "Student ID";
-            // 
-            // tbxStudentName
-            // 
-            this.tbxStudentName.Location = new System.Drawing.Point(19, 33);
-            this.tbxStudentName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tbxStudentName.Name = "tbxStudentName";
-            this.tbxStudentName.Size = new System.Drawing.Size(132, 22);
-            this.tbxStudentName.TabIndex = 2;
-            this.tbxStudentName.Text = "Your Name";
+            this.tbxEventTitle.Click += new System.EventHandler(this.tbxEventTitle_Click);
             // 
             // mcEvents
             // 
@@ -346,7 +336,7 @@
             // 
             this.clbEvents.FormattingEnabled = true;
             this.clbEvents.Location = new System.Drawing.Point(555, 65);
-            this.clbEvents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clbEvents.Margin = new System.Windows.Forms.Padding(4);
             this.clbEvents.Name = "clbEvents";
             this.clbEvents.Size = new System.Drawing.Size(383, 157);
             this.clbEvents.TabIndex = 0;
@@ -392,13 +382,12 @@
         private System.Windows.Forms.Button btnAddEvent;
         private System.Windows.Forms.RichTextBox rtbEventDescription;
         private System.Windows.Forms.TextBox tbxEventTitle;
-        private System.Windows.Forms.TextBox tbxStudentID;
-        private System.Windows.Forms.TextBox tbxStudentName;
         private System.Windows.Forms.MonthCalendar mcEvents;
         private System.Windows.Forms.CheckedListBox clbEvents;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox clbChores;
+        private System.Windows.Forms.ComboBox cbxEventHost;
     }
 }
 

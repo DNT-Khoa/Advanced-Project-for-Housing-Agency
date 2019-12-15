@@ -35,6 +35,7 @@ namespace Software_housing_project
                     if (!isOpenEmployee)
                     {
                         house.Login(isEmployee);
+                        isOpenEmployee = true;
                     }
                     break;
                 case "Student" :
@@ -42,6 +43,7 @@ namespace Software_housing_project
                     if (!isOpenStudent)
                     {
                         house.Login(isEmployee);
+                        isOpenStudent = true;
                     }
                     break;
             }

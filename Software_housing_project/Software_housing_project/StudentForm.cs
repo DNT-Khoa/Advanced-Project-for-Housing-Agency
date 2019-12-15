@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,12 @@ namespace Software_housing_project
               
             
             InitializeComponent();
+            mcEvents.MinDate = DateTime.Now;
+            mcChore.MinDate = DateTime.Now;
+
+            //Can file complaint as far as a year in the past. 
+            DateTime startOfYear = new DateTime(DateTime.Now.Year, 1,1);
+            mcComplaint.MinDate = DateTime.ParseExact(startOfYear.ToShortDateString(), "MM/dd/yyyy", CultureInfo.InvariantCulture);
 
             UpdateCheckBoxStudentsName();
             UpdateChoresDescriptions();
@@ -30,7 +37,7 @@ namespace Software_housing_project
         private void btnAddChore_Click(object sender, EventArgs e)
         {
             string selectedDate = mcChore.SelectionRange.Start.ToShortDateString();
-
+            int result = DateTime.Compare(mcChore.SelectionRange.Start, mcChore.TodayDate);
             if (cbxName.SelectedIndex == -1)
             {
                 MessageBox.Show("Select a correct student name!");
@@ -42,6 +49,9 @@ namespace Software_housing_project
             else if(String.Compare(selectedDate, string.Empty) == 0)
             {
                 MessageBox.Show("Select a correct date!");
+            } else if (result < 0)
+            {
+                MessageBox.Show("You cannot choose a date from the past! It doesn't make sense.");
             }
             else
             {
@@ -54,7 +64,8 @@ namespace Software_housing_project
                     clbChores.Items.Add(chore.GetInfo());
 
                     House.updateChores();
-                } else
+                }
+                else
                 {
                     MessageBox.Show("The same person should not do the same chore on the same day more than one time ! Do you think so ?");
                 }
@@ -77,13 +88,14 @@ namespace Software_housing_project
         public void updateRules()
         {
             List<string> internalRules = GetRules();
-
+            int lineIndex = 0;
             if (internalRules != House.rules)
             {
                 lbxRules.Items.Clear();
                 foreach (string rule in House.rules)
                 {
-                    lbxRules.Items.Add(rule);
+                    lbxRules.Items.Add(lineIndex.ToString() + ". " + rule);
+                    lineIndex++;
                 }
             }
         }
@@ -100,9 +112,11 @@ namespace Software_housing_project
         public void UpdateCheckBoxStudentsName()
         {
             cbxName.Items.Clear();
+            cbxEventHost.Items.Clear();
             foreach (var student in House.tenants)
             {
-                cbxName.Items.Add($"{student.FirstName} -- Id:{student.IdNumber}");
+                cbxName.Items.Add($"{student.FirstName}  Id:{student.IdNumber}");
+                cbxEventHost.Items.Add($"{student.FirstName}  Id:{student.IdNumber}");
             }
         }
 
@@ -118,9 +132,9 @@ namespace Software_housing_project
         {
             string selectedDate = mcComplaint.SelectionRange.Start.ToShortDateString(); 
 
-            if (String.Compare(rtbDescription.Text, string.Empty) == 0)
+            if (String.Compare(rtbDescription.Text, string.Empty) == 0 || String.Compare(rtbDescription.Text, "Description") == 0)
             {
-                MessageBox.Show("Complaint can't be blank!");
+                MessageBox.Show("Write a meaningful description!");
             }
             else if (String.Compare(selectedDate, string.Empty) == 0)
             {
@@ -139,7 +153,8 @@ namespace Software_housing_project
         {
             if(House.complaints.Count != 0)
             {
-                
+                btnNext.Enabled = true;
+
                 if (complaintTracker > 0)
                 {
                     rtbComplaints.Text = House.complaints[--complaintTracker].GetInfo();
@@ -147,7 +162,6 @@ namespace Software_housing_project
                 else
                 {
                     btnPrevious.Enabled = false;
-                    btnNext.Enabled = true;
                 }
             }
             else
@@ -160,14 +174,15 @@ namespace Software_housing_project
         {
             if(House.complaints.Count != 0)
             {
-                if(complaintTracker < House.complaints.Count -1)
+                btnPrevious.Enabled = true;
+
+                if (complaintTracker < House.complaints.Count -1)
                 {
                     rtbComplaints.Text = House.complaints[++complaintTracker].GetInfo();
                 }
                 else
                 {
                     btnNext.Enabled = false;
-                    btnPrevious.Enabled = true;
                 }
             }
             else
@@ -177,20 +192,56 @@ namespace Software_housing_project
         }
 
         private void btnAddEvent_Click(object sender, EventArgs e)
-        {
-            string name = tbxStudentName.Text;
-            string title = tbxEventTitle.Text;
-            string date = mcEvents.SelectionRange.Start.ToShortDateString();
-            string description = rtbEventDescription.Text;
-            House.events.Add(new Event(name, title, date, description));
-            clbEvents.Items.Add($"{date} {title} : {name}");
+        {                      
+            if(cbxEventHost.SelectedIndex != -1 && cbxEventHost.Text != "")
+            {
+                string name = cbxEventHost.SelectedItem.ToString();
+                if(tbxEventTitle.Text != "" && tbxEventTitle.Text != "Event Title")
+                {
+                    string title = tbxEventTitle.Text;
+                    if(mcEvents.SelectionRange.Start.ToShortDateString() != "")
+                    {
+                        string date = mcEvents.SelectionRange.Start.ToShortDateString();
+                        if (rtbEventDescription.Text != "" && rtbEventDescription.Text != "Description")
+                        {
+                            string description = rtbEventDescription.Text;
+                            House.events.Add(new Event(name, title, date, description));
+                            clbEvents.Items.Add($"{date} {title} : {name}");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a proper description");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a date");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a title");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a student");
+            }
         }
 
         private void btnShowInfoEvent_Click(object sender, EventArgs e)
         {
+
             int index = clbEvents.SelectedIndex;
-            string info = House.events[index].GetInfo();
-            MessageBox.Show(info);
+            if(index == -1)
+            {
+                MessageBox.Show("Select an event!");
+            }
+            else
+            {
+                string info = House.events[index].GetInfo();
+                MessageBox.Show(info);
+            }
         }
 
 
@@ -200,21 +251,27 @@ namespace Software_housing_project
             rtbComplaints.Text = House.complaints[complaintTracker].GetInfo();
         }
         
-        private void clbChores_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-           
-        }
-
-        private void tpChores_DoubleClick(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void clbChores_DoubleClick(object sender, EventArgs e)
         {
             House.chores.RemoveAt(this.clbChores.SelectedIndex);
             this.clbChores.Items.Remove(this.clbChores.SelectedItem);
             House.updateChores();
+        }
+
+        private void tbxEventTitle_Click(object sender, EventArgs e)
+        {
+            tbxEventTitle.Clear();
+        }
+        private void rtbEventDescription_Click(object sender, EventArgs e)
+        {
+            rtbEventDescription.Clear();
+        }
+
+        private void rtbDescription_Click(object sender, EventArgs e)
+        {
+            rtbDescription.Clear();
         }
     }
 }

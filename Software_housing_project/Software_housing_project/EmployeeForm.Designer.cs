@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeeForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpChores = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.lbxChores = new System.Windows.Forms.ListBox();
             this.tpComplaints = new System.Windows.Forms.TabPage();
+            this.rtbComplaint = new System.Windows.Forms.RichTextBox();
             this.btnClearSelected = new System.Windows.Forms.Button();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
@@ -62,26 +61,11 @@
             this.tbxSchool = new System.Windows.Forms.TextBox();
             this.tbxLastName = new System.Windows.Forms.TextBox();
             this.tbxFirstName = new System.Windows.Forms.TextBox();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.rtbComplaint = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tpChores.SuspendLayout();
             this.tpComplaints.SuspendLayout();
             this.tpRules.SuspendLayout();
             this.tpTenants.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -90,22 +74,22 @@
             this.tabControl1.Controls.Add(this.tpComplaints);
             this.tabControl1.Controls.Add(this.tpRules);
             this.tabControl1.Controls.Add(this.tpTenants);
-            this.tabControl1.Location = new System.Drawing.Point(18, 18);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabControl1.Location = new System.Drawing.Point(16, 14);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1176, 669);
+            this.tabControl1.Size = new System.Drawing.Size(1045, 535);
             this.tabControl1.TabIndex = 1;
             // 
             // tpChores
             // 
             this.tpChores.Controls.Add(this.label1);
             this.tpChores.Controls.Add(this.lbxChores);
-            this.tpChores.Location = new System.Drawing.Point(4, 29);
-            this.tpChores.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpChores.Location = new System.Drawing.Point(4, 25);
+            this.tpChores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpChores.Name = "tpChores";
-            this.tpChores.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tpChores.Size = new System.Drawing.Size(1168, 636);
+            this.tpChores.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpChores.Size = new System.Drawing.Size(1037, 506);
             this.tpChores.TabIndex = 0;
             this.tpChores.Text = "Chores";
             this.tpChores.UseVisualStyleBackColor = true;
@@ -113,47 +97,56 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(508, 112);
+            this.label1.Location = new System.Drawing.Point(452, 90);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 20);
+            this.label1.Size = new System.Drawing.Size(79, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Chores List";
             // 
             // lbxChores
             // 
             this.lbxChores.FormattingEnabled = true;
-            this.lbxChores.ItemHeight = 20;
-            this.lbxChores.Location = new System.Drawing.Point(386, 154);
-            this.lbxChores.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbxChores.ItemHeight = 16;
+            this.lbxChores.Location = new System.Drawing.Point(343, 123);
+            this.lbxChores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbxChores.Name = "lbxChores";
-            this.lbxChores.Size = new System.Drawing.Size(342, 404);
+            this.lbxChores.Size = new System.Drawing.Size(304, 324);
             this.lbxChores.TabIndex = 0;
             // 
             // tpComplaints
             // 
             this.tpComplaints.Controls.Add(this.rtbComplaint);
-            this.tpComplaints.Controls.Add(this.bindingNavigator1);
             this.tpComplaints.Controls.Add(this.btnClearSelected);
             this.tpComplaints.Controls.Add(this.btnClearAll);
             this.tpComplaints.Controls.Add(this.btnNext);
             this.tpComplaints.Controls.Add(this.btnPrevious);
             this.tpComplaints.Controls.Add(this.label2);
-            this.tpComplaints.Location = new System.Drawing.Point(4, 29);
-            this.tpComplaints.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpComplaints.Location = new System.Drawing.Point(4, 25);
+            this.tpComplaints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpComplaints.Name = "tpComplaints";
-            this.tpComplaints.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tpComplaints.Size = new System.Drawing.Size(1168, 636);
+            this.tpComplaints.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpComplaints.Size = new System.Drawing.Size(1037, 506);
             this.tpComplaints.TabIndex = 1;
             this.tpComplaints.Text = "Complaints";
             this.tpComplaints.UseVisualStyleBackColor = true;
             // 
+            // rtbComplaint
+            // 
+            this.rtbComplaint.Enabled = false;
+            this.rtbComplaint.Location = new System.Drawing.Point(276, 72);
+            this.rtbComplaint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rtbComplaint.Name = "rtbComplaint";
+            this.rtbComplaint.Size = new System.Drawing.Size(342, 335);
+            this.rtbComplaint.TabIndex = 7;
+            this.rtbComplaint.Text = "";
+            // 
             // btnClearSelected
             // 
-            this.btnClearSelected.Location = new System.Drawing.Point(744, 269);
-            this.btnClearSelected.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClearSelected.Location = new System.Drawing.Point(661, 215);
+            this.btnClearSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClearSelected.Name = "btnClearSelected";
-            this.btnClearSelected.Size = new System.Drawing.Size(108, 62);
+            this.btnClearSelected.Size = new System.Drawing.Size(96, 50);
             this.btnClearSelected.TabIndex = 5;
             this.btnClearSelected.Text = "Clear Selected";
             this.btnClearSelected.UseVisualStyleBackColor = true;
@@ -161,10 +154,10 @@
             // 
             // btnClearAll
             // 
-            this.btnClearAll.Location = new System.Drawing.Point(884, 540);
-            this.btnClearAll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClearAll.Location = new System.Drawing.Point(786, 432);
+            this.btnClearAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(112, 35);
+            this.btnClearAll.Size = new System.Drawing.Size(100, 28);
             this.btnClearAll.TabIndex = 4;
             this.btnClearAll.Text = "Clear All";
             this.btnClearAll.UseVisualStyleBackColor = true;
@@ -172,10 +165,10 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(582, 540);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNext.Location = new System.Drawing.Point(517, 432);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(112, 35);
+            this.btnNext.Size = new System.Drawing.Size(100, 28);
             this.btnNext.TabIndex = 3;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -183,10 +176,10 @@
             // 
             // btnPrevious
             // 
-            this.btnPrevious.Location = new System.Drawing.Point(310, 540);
-            this.btnPrevious.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPrevious.Location = new System.Drawing.Point(276, 432);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(112, 35);
+            this.btnPrevious.Size = new System.Drawing.Size(100, 28);
             this.btnPrevious.TabIndex = 2;
             this.btnPrevious.Text = "Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
@@ -195,10 +188,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(453, 52);
+            this.label2.Location = new System.Drawing.Point(403, 42);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 20);
+            this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Complaints";
             // 
@@ -209,20 +202,21 @@
             this.tpRules.Controls.Add(this.lbxRules);
             this.tpRules.Controls.Add(this.btnAddToList);
             this.tpRules.Controls.Add(this.rtbRulesToAdd);
-            this.tpRules.Location = new System.Drawing.Point(4, 29);
+            this.tpRules.Location = new System.Drawing.Point(4, 25);
+            this.tpRules.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tpRules.Name = "tpRules";
-            this.tpRules.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tpRules.Size = new System.Drawing.Size(1168, 636);
+            this.tpRules.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tpRules.Size = new System.Drawing.Size(1037, 506);
             this.tpRules.TabIndex = 2;
             this.tpRules.Text = "Rules";
             this.tpRules.UseVisualStyleBackColor = true;
             // 
             // btnRemoveSelected
             // 
-            this.btnRemoveSelected.Location = new System.Drawing.Point(926, 483);
-            this.btnRemoveSelected.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRemoveSelected.Location = new System.Drawing.Point(823, 386);
+            this.btnRemoveSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRemoveSelected.Name = "btnRemoveSelected";
-            this.btnRemoveSelected.Size = new System.Drawing.Size(158, 74);
+            this.btnRemoveSelected.Size = new System.Drawing.Size(140, 59);
             this.btnRemoveSelected.TabIndex = 4;
             this.btnRemoveSelected.Text = "Remove Selected";
             this.btnRemoveSelected.UseVisualStyleBackColor = true;
@@ -230,10 +224,10 @@
             // 
             // btnRemoveAll
             // 
-            this.btnRemoveAll.Location = new System.Drawing.Point(722, 483);
-            this.btnRemoveAll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRemoveAll.Location = new System.Drawing.Point(642, 386);
+            this.btnRemoveAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRemoveAll.Name = "btnRemoveAll";
-            this.btnRemoveAll.Size = new System.Drawing.Size(160, 74);
+            this.btnRemoveAll.Size = new System.Drawing.Size(142, 59);
             this.btnRemoveAll.TabIndex = 3;
             this.btnRemoveAll.Text = "Remove All";
             this.btnRemoveAll.UseVisualStyleBackColor = true;
@@ -242,19 +236,19 @@
             // lbxRules
             // 
             this.lbxRules.FormattingEnabled = true;
-            this.lbxRules.ItemHeight = 20;
-            this.lbxRules.Location = new System.Drawing.Point(682, 71);
-            this.lbxRules.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbxRules.ItemHeight = 16;
+            this.lbxRules.Location = new System.Drawing.Point(606, 57);
+            this.lbxRules.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbxRules.Name = "lbxRules";
-            this.lbxRules.Size = new System.Drawing.Size(434, 364);
+            this.lbxRules.Size = new System.Drawing.Size(386, 292);
             this.lbxRules.TabIndex = 2;
             // 
             // btnAddToList
             // 
-            this.btnAddToList.Location = new System.Drawing.Point(180, 483);
-            this.btnAddToList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddToList.Location = new System.Drawing.Point(160, 386);
+            this.btnAddToList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddToList.Name = "btnAddToList";
-            this.btnAddToList.Size = new System.Drawing.Size(146, 74);
+            this.btnAddToList.Size = new System.Drawing.Size(130, 59);
             this.btnAddToList.TabIndex = 1;
             this.btnAddToList.Text = "Add To List";
             this.btnAddToList.UseVisualStyleBackColor = true;
@@ -262,10 +256,10 @@
             // 
             // rtbRulesToAdd
             // 
-            this.rtbRulesToAdd.Location = new System.Drawing.Point(26, 71);
-            this.rtbRulesToAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rtbRulesToAdd.Location = new System.Drawing.Point(23, 57);
+            this.rtbRulesToAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtbRulesToAdd.Name = "rtbRulesToAdd";
-            this.rtbRulesToAdd.Size = new System.Drawing.Size(494, 362);
+            this.rtbRulesToAdd.Size = new System.Drawing.Size(440, 290);
             this.rtbRulesToAdd.TabIndex = 0;
             this.rtbRulesToAdd.Text = "";
             // 
@@ -286,21 +280,21 @@
             this.tpTenants.Controls.Add(this.tbxSchool);
             this.tpTenants.Controls.Add(this.tbxLastName);
             this.tpTenants.Controls.Add(this.tbxFirstName);
-            this.tpTenants.Location = new System.Drawing.Point(4, 29);
-            this.tpTenants.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpTenants.Location = new System.Drawing.Point(4, 25);
+            this.tpTenants.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpTenants.Name = "tpTenants";
-            this.tpTenants.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tpTenants.Size = new System.Drawing.Size(1168, 636);
+            this.tpTenants.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tpTenants.Size = new System.Drawing.Size(1037, 506);
             this.tpTenants.TabIndex = 3;
             this.tpTenants.Text = "Tenants";
             this.tpTenants.UseVisualStyleBackColor = true;
             // 
             // btnRemoveTenant
             // 
-            this.btnRemoveTenant.Location = new System.Drawing.Point(975, 525);
-            this.btnRemoveTenant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRemoveTenant.Location = new System.Drawing.Point(867, 420);
+            this.btnRemoveTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRemoveTenant.Name = "btnRemoveTenant";
-            this.btnRemoveTenant.Size = new System.Drawing.Size(160, 62);
+            this.btnRemoveTenant.Size = new System.Drawing.Size(142, 50);
             this.btnRemoveTenant.TabIndex = 16;
             this.btnRemoveTenant.Text = "Remove Tenant";
             this.btnRemoveTenant.UseVisualStyleBackColor = true;
@@ -308,10 +302,10 @@
             // 
             // btnShowInfo
             // 
-            this.btnShowInfo.Location = new System.Drawing.Point(790, 525);
-            this.btnShowInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnShowInfo.Location = new System.Drawing.Point(702, 420);
+            this.btnShowInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowInfo.Name = "btnShowInfo";
-            this.btnShowInfo.Size = new System.Drawing.Size(160, 62);
+            this.btnShowInfo.Size = new System.Drawing.Size(142, 50);
             this.btnShowInfo.TabIndex = 15;
             this.btnShowInfo.Text = "Show Info";
             this.btnShowInfo.UseVisualStyleBackColor = true;
@@ -320,29 +314,29 @@
             // lbxTenants
             // 
             this.lbxTenants.FormattingEnabled = true;
-            this.lbxTenants.ItemHeight = 20;
-            this.lbxTenants.Location = new System.Drawing.Point(790, 120);
-            this.lbxTenants.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lbxTenants.ItemHeight = 16;
+            this.lbxTenants.Location = new System.Drawing.Point(702, 96);
+            this.lbxTenants.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbxTenants.Name = "lbxTenants";
-            this.lbxTenants.Size = new System.Drawing.Size(343, 364);
+            this.lbxTenants.Size = new System.Drawing.Size(305, 292);
             this.lbxTenants.TabIndex = 14;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(934, 63);
+            this.label9.Location = new System.Drawing.Point(830, 50);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 20);
+            this.label9.Size = new System.Drawing.Size(60, 17);
             this.label9.TabIndex = 13;
             this.label9.Text = "Tenants";
             // 
             // btnAddTenant
             // 
-            this.btnAddTenant.Location = new System.Drawing.Point(309, 525);
-            this.btnAddTenant.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddTenant.Location = new System.Drawing.Point(275, 420);
+            this.btnAddTenant.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddTenant.Name = "btnAddTenant";
-            this.btnAddTenant.Size = new System.Drawing.Size(160, 62);
+            this.btnAddTenant.Size = new System.Drawing.Size(142, 50);
             this.btnAddTenant.TabIndex = 12;
             this.btnAddTenant.Text = "Add Tenant";
             this.btnAddTenant.UseVisualStyleBackColor = true;
@@ -351,223 +345,100 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(243, 368);
+            this.label8.Location = new System.Drawing.Point(216, 294);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 20);
+            this.label8.Size = new System.Drawing.Size(33, 17);
             this.label8.TabIndex = 11;
             this.label8.Text = "Age";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(368, 238);
+            this.label7.Location = new System.Drawing.Point(327, 190);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 20);
+            this.label7.Size = new System.Drawing.Size(53, 17);
             this.label7.TabIndex = 10;
             this.label7.Text = "Course";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 238);
+            this.label6.Location = new System.Drawing.Point(21, 190);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 20);
+            this.label6.Size = new System.Drawing.Size(51, 17);
             this.label6.TabIndex = 9;
             this.label6.Text = "School";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(368, 131);
+            this.label4.Location = new System.Drawing.Point(327, 105);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 20);
+            this.label4.Size = new System.Drawing.Size(76, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Last Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 131);
+            this.label3.Location = new System.Drawing.Point(21, 105);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 20);
+            this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "First Name";
             // 
             // tbxAge
             // 
-            this.tbxAge.Location = new System.Drawing.Point(291, 357);
-            this.tbxAge.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbxAge.Location = new System.Drawing.Point(259, 286);
+            this.tbxAge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxAge.Name = "tbxAge";
-            this.tbxAge.Size = new System.Drawing.Size(190, 26);
+            this.tbxAge.Size = new System.Drawing.Size(169, 22);
             this.tbxAge.TabIndex = 5;
             // 
             // tbxCourse
             // 
-            this.tbxCourse.Location = new System.Drawing.Point(464, 234);
-            this.tbxCourse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbxCourse.Location = new System.Drawing.Point(412, 187);
+            this.tbxCourse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxCourse.Name = "tbxCourse";
-            this.tbxCourse.Size = new System.Drawing.Size(175, 26);
+            this.tbxCourse.Size = new System.Drawing.Size(156, 22);
             this.tbxCourse.TabIndex = 4;
             // 
             // tbxSchool
             // 
-            this.tbxSchool.Location = new System.Drawing.Point(134, 234);
-            this.tbxSchool.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbxSchool.Location = new System.Drawing.Point(119, 187);
+            this.tbxSchool.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxSchool.Name = "tbxSchool";
-            this.tbxSchool.Size = new System.Drawing.Size(190, 26);
+            this.tbxSchool.Size = new System.Drawing.Size(169, 22);
             this.tbxSchool.TabIndex = 3;
             // 
             // tbxLastName
             // 
-            this.tbxLastName.Location = new System.Drawing.Point(464, 120);
-            this.tbxLastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbxLastName.Location = new System.Drawing.Point(412, 96);
+            this.tbxLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxLastName.Name = "tbxLastName";
-            this.tbxLastName.Size = new System.Drawing.Size(190, 26);
+            this.tbxLastName.Size = new System.Drawing.Size(169, 22);
             this.tbxLastName.TabIndex = 1;
             // 
             // tbxFirstName
             // 
-            this.tbxFirstName.Location = new System.Drawing.Point(134, 120);
-            this.tbxFirstName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbxFirstName.Location = new System.Drawing.Point(119, 96);
+            this.tbxFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbxFirstName.Name = "tbxFirstName";
-            this.tbxFirstName.Size = new System.Drawing.Size(175, 26);
+            this.tbxFirstName.Size = new System.Drawing.Size(156, 22);
             this.tbxFirstName.TabIndex = 0;
-            // 
-            // bindingNavigator1
-            // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(4, 5);
-            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1160, 27);
-            this.bindingNavigator1.TabIndex = 6;
-            this.bindingNavigator1.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // rtbComplaint
-            // 
-            this.rtbComplaint.Location = new System.Drawing.Point(310, 90);
-            this.rtbComplaint.Name = "rtbComplaint";
-            this.rtbComplaint.Size = new System.Drawing.Size(384, 418);
-            this.rtbComplaint.TabIndex = 7;
-            this.rtbComplaint.Text = "";
             // 
             // EmployeeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EmployeeForm";
             this.Text = "HouseMate";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
@@ -579,9 +450,6 @@
             this.tpRules.ResumeLayout(false);
             this.tpTenants.ResumeLayout(false);
             this.tpTenants.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-            this.bindingNavigator1.ResumeLayout(false);
-            this.bindingNavigator1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -620,18 +488,6 @@
         private System.Windows.Forms.TextBox tbxSchool;
         private System.Windows.Forms.TextBox tbxLastName;
         private System.Windows.Forms.TextBox tbxFirstName;
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.RichTextBox rtbComplaint;
     }
 }

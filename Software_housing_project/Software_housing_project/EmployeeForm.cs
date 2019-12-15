@@ -21,20 +21,21 @@ namespace Software_housing_project
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
             foreach (Student student in House.tenants) {
-                lbxTenants.Items.Add($"{student.FirstName} {student.LastName} ID: {student.IdNumber}");
+                lbxTenants.Items.Add($"{student.FirstName} {student.LastName} Id: {student.IdNumber}");
             }
         }
 
         public void updateRules()
         {
             List<string> internalRules = GetRules();
-
+            int lineIndex = 0;
             if (internalRules != House.rules)
             {
                 lbxRules.Items.Clear();
                 foreach (string rule in House.rules)
                 {
-                    lbxRules.Items.Add(rule);
+                    lbxRules.Items.Add(lineIndex.ToString() + ". " + rule);
+                    lineIndex++;
                 }
             }
         }
@@ -79,8 +80,14 @@ namespace Software_housing_project
 
         private void btnRemoveAll_Click(object sender, EventArgs e)
         {
-            House.rules.Clear();
-            House.updateRules();
+            if (lbxRules.Items.Count == 0)
+            {
+                MessageBox.Show("There's nothing left to be removed!");
+            } else
+            {
+                House.rules.Clear();
+                House.updateRules();
+            }      
         }
 
         private void btnRemoveSelected_Click(object sender, EventArgs e)
@@ -98,12 +105,13 @@ namespace Software_housing_project
         private void btnAddTenant_Click(object sender, EventArgs e)
         {
             string tenantFirstName, tenantLastName, tenantSchool, tenantCourse;
-            int tenantAge;
+            int tenantAge, numberToCheck;
             tenantFirstName = tbxFirstName.Text;
             tenantLastName = tbxLastName.Text;
             tenantSchool = tbxSchool.Text;
             tenantCourse = tbxCourse.Text;
-            tenantAge = Convert.ToInt32(tbxAge.Text);
+            
+            bool isInteger = int.TryParse(tbxAge.Text, out numberToCheck);
 
             if (tenantFirstName == "")
             {
@@ -120,17 +128,35 @@ namespace Software_housing_project
             } else if (tbxAge.Text == "")
             {
                 MessageBox.Show("I wonder what is the name of the tenant ?");
-            } else
+            } else if (!isInteger)
             {
-                House.tenants.Add(new Student(tenantFirstName, tenantLastName, tenantAge, tenantSchool, tenantCourse));
-                lbxTenants.Items.Add($"{tenantFirstName} {tenantLastName} ID: {House.tenants[House.tenants.Count - 1].IdNumber}");
-                House.UpdateCheckBoxStudentsName();
-                
-                tbxFirstName.Text = "";
-                tbxLastName.Text = "";
-                tbxSchool.Text = "";
-                tbxCourse.Text = "";
-                tbxAge.Text = "";
+                MessageBox.Show("The age you enter is not an integer !");
+            } 
+            else
+            {
+                tenantAge = Convert.ToInt32(tbxAge.Text);
+                if (tenantAge <= 0)
+                {
+                    MessageBox.Show("Either you are not existing or you are making a mistake !?");
+                    tbxAge.Text = "";
+                }
+                else if (tenantAge > 100)
+                {
+                    MessageBox.Show("You are way too old to rent a room in our agency!");
+                    tbxAge.Text = "";
+                }
+                else
+                {
+                    House.tenants.Add(new Student(tenantFirstName, tenantLastName, tenantAge, tenantSchool, tenantCourse));
+                    lbxTenants.Items.Add($"{tenantFirstName} {tenantLastName} ID: {House.tenants[House.tenants.Count - 1].IdNumber}");
+                    House.UpdateCheckBoxStudentsName();
+
+                    tbxFirstName.Text = "";
+                    tbxLastName.Text = "";
+                    tbxSchool.Text = "";
+                    tbxCourse.Text = "";
+                    tbxAge.Text = "";
+                }
             }
         }
 
@@ -186,15 +212,30 @@ namespace Software_housing_project
 
         private void btnClearAll_Click(object sender, EventArgs e)
         {
-            rtbComplaint.Clear();
-            House.complaints.Clear();
-            House.updateComplaints();
+            if(House.complaints.Count > 0)
+            {
+                rtbComplaint.Clear();
+                House.complaints.Clear();
+                House.updateComplaints();
+            }
+            else
+            {
+                MessageBox.Show("List is already empty");
+            }
+           
         }
 
         private void btnClearSelected_Click(object sender, EventArgs e)
         {
-            House.complaints.RemoveAt(complaintsIndex);
-            updateComplaints();
+            if(House.complaints.Count > complaintsIndex)
+            {
+                House.complaints.RemoveAt(complaintsIndex);
+                updateComplaints();
+            }
+            else
+            {
+                MessageBox.Show("There is nothing selected");
+            }          
         }
     }
 }
