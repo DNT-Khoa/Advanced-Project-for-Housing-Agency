@@ -22,7 +22,8 @@ namespace Software_housing_project
               
             
             InitializeComponent();
-
+            mcEvents.MinDate = DateTime.Now;
+            mcChore.MinDate = DateTime.Now;
             UpdateCheckBoxStudentsName();
             UpdateChoresDescriptions();
         }
@@ -104,9 +105,11 @@ namespace Software_housing_project
         public void UpdateCheckBoxStudentsName()
         {
             cbxName.Items.Clear();
+            cbxEventHost.Items.Clear();
             foreach (var student in House.tenants)
             {
                 cbxName.Items.Add($"{student.FirstName} -- Id:{student.IdNumber}");
+                cbxEventHost.Items.Add($"{student.FirstName} -- Id:{student.IdNumber}");
             }
         }
 
@@ -183,13 +186,41 @@ namespace Software_housing_project
         }
 
         private void btnAddEvent_Click(object sender, EventArgs e)
-        {
-            string name = tbxStudentName.Text;
-            string title = tbxEventTitle.Text;
-            string date = mcEvents.SelectionRange.Start.ToShortDateString();
-            string description = rtbEventDescription.Text;
-            House.events.Add(new Event(name, title, date, description));
-            clbEvents.Items.Add($"{date} {title} : {name}");
+        {                      
+            if(cbxEventHost.SelectedIndex != -1 && cbxEventHost.Text != "")
+            {
+                string name = cbxEventHost.SelectedItem.ToString();
+                if(tbxEventTitle.Text != "" && tbxEventTitle.Text != "Event Title")
+                {
+                    string title = tbxEventTitle.Text;
+                    if(mcEvents.SelectionRange.Start.ToShortDateString() != "")
+                    {
+                        string date = mcEvents.SelectionRange.Start.ToShortDateString();
+                        if (rtbEventDescription.Text != "" && rtbEventDescription.Text != "Description")
+                        {
+                            string description = rtbEventDescription.Text;
+                            House.events.Add(new Event(name, title, date, description));
+                            clbEvents.Items.Add($"{date} {title} : {name}");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a proper description");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a date");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a title");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a student");
+            }
         }
 
         private void btnShowInfoEvent_Click(object sender, EventArgs e)
@@ -213,6 +244,15 @@ namespace Software_housing_project
             House.chores.RemoveAt(this.clbChores.SelectedIndex);
             this.clbChores.Items.Remove(this.clbChores.SelectedItem);
             House.updateChores();
+        }
+
+        private void tbxEventTitle_Click(object sender, EventArgs e)
+        {
+            tbxEventTitle.Clear();
+        }
+        private void rtbEventDescription_Click(object sender, EventArgs e)
+        {
+            rtbEventDescription.Clear();
         }
     }
 }

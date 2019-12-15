@@ -212,15 +212,30 @@ namespace Software_housing_project
 
         private void btnClearAll_Click(object sender, EventArgs e)
         {
-            rtbComplaint.Clear();
-            House.complaints.Clear();
-            House.updateComplaints();
+            if(House.complaints.Count > 0)
+            {
+                rtbComplaint.Clear();
+                House.complaints.Clear();
+                House.updateComplaints();
+            }
+            else
+            {
+                MessageBox.Show("List is already empty");
+            }
+           
         }
 
         private void btnClearSelected_Click(object sender, EventArgs e)
         {
-            House.complaints.RemoveAt(complaintsIndex);
-            updateComplaints();
+            if(House.complaints.Count > complaintsIndex)
+            {
+                House.complaints.RemoveAt(complaintsIndex);
+                updateComplaints();
+            }
+            else
+            {
+                MessageBox.Show("There is nothing selected");
+            }          
         }
     }
 }
