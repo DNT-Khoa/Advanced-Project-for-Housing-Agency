@@ -186,30 +186,34 @@ namespace Software_housing_project
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if (complaintsIndex > 0)
+            if (House.complaints.Count != 0)
             {
-                rtbComplaint.Text = House.complaints[--complaintsIndex].GetInfo();
-            }
-            else
-            {
-                MessageBox.Show("This is the first complaint");
-                
-            }
+                if (complaintsIndex > 0)
+                {
+                    rtbComplaint.Text = House.complaints[--complaintsIndex].GetInfo();
+                }
+                else
+                {
+                    MessageBox.Show("This is the first complaint");
 
+                }
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (complaintsIndex < House.complaints.Count - 1)
+            if (House.complaints.Count != 0)
             {
-                rtbComplaint.Text = House.complaints[++complaintsIndex].GetInfo();
-            }
-            else
-            {
-                MessageBox.Show("This is the last complaint. Go back!");
-                
-            }
+                if (complaintsIndex < House.complaints.Count - 1)
+                {
+                    rtbComplaint.Text = House.complaints[++complaintsIndex].GetInfo();
+                }
+                else
+                {
+                    MessageBox.Show("This is the last complaint. Go back!");
 
+                }
+            }
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)
