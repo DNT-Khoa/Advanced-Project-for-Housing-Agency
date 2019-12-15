@@ -192,7 +192,8 @@ namespace Software_housing_project
             }
             else
             {
-                //TODO ERROR MESSAGE (This is the first complaint)
+                MessageBox.Show("This is the first complaint");
+                
             }
 
         }
@@ -205,7 +206,8 @@ namespace Software_housing_project
             }
             else
             {
-                //TODO ERROR MESSAGE (There are no more complaints)
+                MessageBox.Show("This is the last complaint. Go back!");
+                
             }
 
         }
