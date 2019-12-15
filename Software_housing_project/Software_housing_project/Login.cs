@@ -45,8 +45,6 @@ namespace Software_housing_project
                     }
                     break;
             }
-
-            
         }
     }
 }

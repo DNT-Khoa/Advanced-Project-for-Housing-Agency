@@ -140,15 +140,14 @@ namespace Software_housing_project
             if(House.complaints.Count != 0)
             {
                 
-                if (complaintTracker >= 0 && complaintTracker < House.complaints.Count)
+                if (complaintTracker > 0)
                 {
-                    rtbComplaints.Text = House.complaints[complaintTracker].GetInfo();
-                    complaintTracker--;
-
+                    rtbComplaints.Text = House.complaints[--complaintTracker].GetInfo();
                 }
                 else
                 {
-                    complaintTracker = House.complaints.Count - 1;
+                    btnPrevious.Enabled = false;
+                    btnNext.Enabled = true;
                 }
             }
             else
@@ -161,15 +160,14 @@ namespace Software_housing_project
         {
             if(House.complaints.Count != 0)
             {
-                if(complaintTracker < House.complaints.Count && complaintTracker >= 0)
+                if(complaintTracker < House.complaints.Count -1)
                 {
-                    rtbComplaints.Text = House.complaints[complaintTracker].GetInfo();
-                    complaintTracker++;
+                    rtbComplaints.Text = House.complaints[++complaintTracker].GetInfo();
                 }
                 else
                 {
-                    complaintTracker = 0;
-                    
+                    btnNext.Enabled = false;
+                    btnPrevious.Enabled = true;
                 }
             }
             else
