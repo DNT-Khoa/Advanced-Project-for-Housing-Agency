@@ -16,6 +16,7 @@ namespace Software_housing_project
         public EmployeeForm()
         {
             InitializeComponent();
+
         }
 
         private void EmployeeForm_Load(object sender, EventArgs e)
