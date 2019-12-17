@@ -13,7 +13,7 @@ namespace Software_housing_project
 {
     public partial class StudentForm : Form
     {
-        private int complaintTracker = House.complaints.Count;
+        private int complaintTracker = 0;
 
         public StudentForm()
         {
@@ -151,44 +151,15 @@ namespace Software_housing_project
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if(House.complaints.Count != 0)
-            {
-                btnNext.Enabled = true;
-
-                if (complaintTracker > 0)
-                {
-                    rtbComplaints.Text = House.complaints[--complaintTracker].GetInfo();
-                }
-                else
-                {
-                    btnPrevious.Enabled = false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("There are no complaints!");
-            }
+            complaintTracker -= 1;
+            updateComplaints();
+            
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if(House.complaints.Count != 0)
-            {
-                btnPrevious.Enabled = true;
-
-                if (complaintTracker < House.complaints.Count -1)
-                {
-                    rtbComplaints.Text = House.complaints[++complaintTracker].GetInfo();
-                }
-                else
-                {
-                    btnNext.Enabled = false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("There are no complaints!");
-            }
+            complaintTracker += 1;
+            updateComplaints();
         }
 
         private void btnAddEvent_Click(object sender, EventArgs e)
@@ -247,14 +218,46 @@ namespace Software_housing_project
 
         public void updateComplaints()
         {
-            int complaintIndex = House.complaints.Count();
             rtbComplaints.Clear();
-            if (complaintIndex <= 0) {
-                rtbComplaints.Text = House.complaints[0].GetInfo();
-            } else {
-                rtbComplaints.Text = House.complaints[--complaintIndex].GetInfo();  
+            int numOfItems = House.complaints.Count;
+            if (numOfItems == 0)
+            {
+                rtbComplaints.Text = "There are no current complaints";
+                btnPrevious.Enabled = false;
+                btnNext.Enabled = false;
+            } else if (numOfItems == 1)
+            {
+                complaintTracker = 0;
+                btnPrevious.Enabled = false;
+                btnNext.Enabled = false;
+                rtbComplaints.Text = House.complaints[complaintTracker].GetInfo();
+            } else
+            {
+                if (complaintTracker == 0)
+                {
+                    btnPrevious.Enabled = false;
+                    btnNext.Enabled = true;
+                    rtbComplaints.Text = House.complaints[complaintTracker].GetInfo();
+                }
+                else if (complaintTracker == numOfItems - 1)
+                {
+                    btnNext.Enabled = false;
+                    btnPrevious.Enabled = true;
+                    rtbComplaints.Text = House.complaints[complaintTracker].GetInfo();
+                } else
+                {
+                    btnNext.Enabled = true;
+                    if (complaintTracker == numOfItems)
+                    {
+                        complaintTracker = numOfItems - 1;
+                        btnNext.Enabled = false;
+                    }
+                    
+                    btnPrevious.Enabled = true;
+                    rtbComplaints.Text = House.complaints[complaintTracker].GetInfo(); 
+                }
             }
-        }
+        }    
         
         
 

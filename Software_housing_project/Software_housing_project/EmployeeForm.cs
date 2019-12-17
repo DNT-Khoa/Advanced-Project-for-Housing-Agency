@@ -12,7 +12,7 @@ namespace Software_housing_project
 {
     public partial class EmployeeForm : Form
     {
-        private int complaintsIndex = 0;
+        private int complaintTracker = 0;
         public EmployeeForm()
         {
             InitializeComponent();
@@ -52,15 +52,47 @@ namespace Software_housing_project
 
         public void updateComplaints()
         {
-            int complaintIndex = House.complaints.Count();
             rtbComplaint.Clear();
-            if (complaintIndex <= 0)
+            int numOfItems = House.complaints.Count;
+            if (numOfItems == 0)
             {
-                rtbComplaint.Text = House.complaints[0].GetInfo();
+                rtbComplaint.Text = "There are no current complaints";
+                btnPrevious.Enabled = false;
+                btnNext.Enabled = false;
+            }
+            else if (numOfItems == 1)
+            {
+                complaintTracker = 0;
+                btnPrevious.Enabled = false;
+                btnNext.Enabled = false;
+                rtbComplaint.Text = House.complaints[complaintTracker].GetInfo();
             }
             else
             {
-                rtbComplaint.Text = House.complaints[--complaintIndex].GetInfo();
+                if (complaintTracker == 0)
+                {
+                    btnPrevious.Enabled = false;
+                    btnNext.Enabled = true;
+                    rtbComplaint.Text = House.complaints[complaintTracker].GetInfo();
+                }
+                else if (complaintTracker == numOfItems - 1)
+                {
+                    btnNext.Enabled = false;
+                    btnPrevious.Enabled = true;
+                    rtbComplaint.Text = House.complaints[complaintTracker].GetInfo();
+                }
+                else
+                {
+                    btnNext.Enabled = true;
+                    if (complaintTracker == numOfItems)
+                    {
+                        complaintTracker = numOfItems - 1;
+                        btnNext.Enabled = false;
+                    }
+                    
+                    btnPrevious.Enabled = true;
+                    rtbComplaint.Text = House.complaints[complaintTracker].GetInfo();
+                }
             }
         }
 
@@ -196,34 +228,14 @@ namespace Software_housing_project
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if (House.complaints.Count != 0)
-            {
-                if (complaintsIndex > 0)
-                {
-                    rtbComplaint.Text = House.complaints[--complaintsIndex].GetInfo();
-                }
-                else
-                {
-                    MessageBox.Show("This is the first complaint");
-
-                }
-            }
+            complaintTracker--;
+            updateComplaints();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (House.complaints.Count != 0)
-            {
-                if (complaintsIndex < House.complaints.Count - 1)
-                {
-                    rtbComplaint.Text = House.complaints[++complaintsIndex].GetInfo();
-                }
-                else
-                {
-                    MessageBox.Show("This is the last complaint. Go back!");
-
-                }
-            }
+            complaintTracker++;
+            updateComplaints();
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)
@@ -236,17 +248,17 @@ namespace Software_housing_project
             }
             else
             {
-                MessageBox.Show("List is already empty");
+                MessageBox.Show("There are no current complaints");
             }
            
         }
 
         private void btnClearSelected_Click(object sender, EventArgs e)
         {
-            if(House.complaints.Count > complaintsIndex)
+            if(House.complaints.Count > 0)
             {
-                House.complaints.RemoveAt(complaintsIndex);
-                updateComplaints();
+                House.complaints.RemoveAt(complaintTracker);
+                House.updateComplaints();
             }
             else
             {
