@@ -131,6 +131,7 @@ namespace Software_housing_project
             } else if (!isInteger)
             {
                 MessageBox.Show("The age you enter is not an integer !");
+                tbxAge.Text = "";
             } 
             else
             {
