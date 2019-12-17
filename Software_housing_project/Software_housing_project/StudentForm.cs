@@ -26,10 +26,11 @@ namespace Software_housing_project
             mcEvents.MinDate = DateTime.Now;
             mcChore.MinDate = DateTime.Now;
 
-            //Can file complaint as far as a year in the past. 
-            DateTime startOfYear = new DateTime(DateTime.Now.Year, 1,1);
-            mcComplaint.MinDate = DateTime.ParseExact(startOfYear.ToShortDateString(), "MM/dd/yyyy", CultureInfo.InvariantCulture);
-
+            //Can file complaint as far as a year in the past and a year in the future.
+            DateTime startOfPeriod = new DateTime(DateTime.Now.Year - 1, DateTime.Now.Month, DateTime.Now.Day);
+            DateTime endOfPeriod = new DateTime(DateTime.Now.Year + 1, DateTime.Now.Month, DateTime.Now.Day);
+            mcComplaint.MinDate = DateTime.ParseExact(startOfPeriod.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            mcComplaint.MaxDate = DateTime.ParseExact(endOfPeriod.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             UpdateCheckBoxStudentsName();
             UpdateChoresDescriptions();
         }
