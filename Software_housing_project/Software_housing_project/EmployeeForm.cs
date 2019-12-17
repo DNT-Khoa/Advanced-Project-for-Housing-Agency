@@ -13,9 +13,11 @@ namespace Software_housing_project
     public partial class EmployeeForm : Form
     {
         private int complaintsIndex = 0;
-        public EmployeeForm()
+        private Login parentForm;
+        public EmployeeForm(Login parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
         }
 
         private void EmployeeForm_Load(object sender, EventArgs e)
@@ -58,7 +60,7 @@ namespace Software_housing_project
         public void updateChores()
         {
             lbxChores.Items.Clear();
-            foreach (var chore in House.chores)
+            foreach (var chore in parentForm.House.Chores)
             {
                 lbxChores.Items.Add(chore.GetInfo());
             }

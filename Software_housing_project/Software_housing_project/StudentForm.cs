@@ -14,8 +14,8 @@ namespace Software_housing_project
     public partial class StudentForm : Form
     {
         private int complaintTracker = House.complaints.Count;
-
-        public StudentForm()
+        private Login parentForm;
+        public StudentForm(Login parentForm)
         {
             House.tenants.Add(new Student("Marta", "Alston", 15, "Fontys", "ICT"));
             House.tenants.Add(new Student("Jim", "Bob", 19, "Fontys", "ICT"));
@@ -25,7 +25,7 @@ namespace Software_housing_project
             InitializeComponent();
             mcEvents.MinDate = DateTime.Now;
             mcChore.MinDate = DateTime.Now;
-
+            this.parentForm = parentForm;
             //Can file complaint as far as a year in the past and a year in the future.
             DateTime startOfPeriod = new DateTime(DateTime.Now.Year - 1, DateTime.Now.Month, DateTime.Now.Day);
             DateTime endOfPeriod = new DateTime(DateTime.Now.Year + 1, DateTime.Now.Month, DateTime.Now.Day);
@@ -60,11 +60,11 @@ namespace Software_housing_project
                 {
                     Chore chore = new Chore(cbxChore.SelectedItem.ToString(), cbxName.SelectedItem.ToString(), selectedDate);
 
-                    House.chores.Add(chore);
+                    parentForm.House.AddChore(chore);
 
                     clbChores.Items.Add(chore.GetInfo());
 
-                    House.updateChores();
+                    parentForm.updateChores();
                 }
                 else
                 {
@@ -76,7 +76,7 @@ namespace Software_housing_project
 
         private bool choreIsValid(string choreName, string studentName, string choreDate)
         {
-            foreach(Chore chore in House.chores)
+            foreach(Chore chore in parentForm.House.Chores)
             {
                 if (chore.getChoreDescription() == choreName && chore.getChoreStudentName() == studentName && chore.getChoreDate() == choreDate)
                 {
@@ -256,7 +256,7 @@ namespace Software_housing_project
 
         private void clbChores_DoubleClick(object sender, EventArgs e)
         {
-            House.chores.RemoveAt(this.clbChores.SelectedIndex);
+            parentForm.House.Chores.RemoveAt(this.clbChores.SelectedIndex);
             this.clbChores.Items.Remove(this.clbChores.SelectedItem);
             House.updateChores();
         }

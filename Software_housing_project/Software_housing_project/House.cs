@@ -11,49 +11,41 @@ namespace Software_housing_project
         public static List<Student> tenants = new List<Student>();
         public static List<string> rules = new List<string>();
         public static List<Complaint> complaints = new List<Complaint>();
-        public static List<Chore> chores = new List<Chore>();
+        private List<Chore> chores = new List<Chore>();
         public static List<Event> events = new List<Event>();
 
-        static EmployeeForm ef = new EmployeeForm();
-        static StudentForm sf = new StudentForm(); 
-
-
-
-        public void Login(bool isEmployee)
+        public void AddChore(Chore chore)
         {
-            if (isEmployee)
-            {
-                ef.Visible = true;
-            }
-            else
-            {
-                sf.Visible = true;
-            }
+            this.chores.Add(chore);
         }
 
+        public List<Chore> Chores
+        {
+            get { return this.chores; }
+        }
         public static void updateRules()
         {
-            sf.updateRules();
-            ef.updateRules();
+            //sf.updateRules();
+            //ef.updateRules();
         }
 
         public static void updateComplaints()
         {
-            ef.updateComplaints();
-            sf.updateComplaints();
+            //ef.updateComplaints();
+            //sf.updateComplaints();
         }
 
         public static void UpdateCheckBoxStudentsName()
         {
             foreach (var student in House.tenants)
             {
-                sf.UpdateCheckBoxStudentsName();
+                //sf.UpdateCheckBoxStudentsName();
             }
         }
 
         public static void updateChores()
         {
-            ef.updateChores();
+            //ef.updateChores();
         }
 
     }

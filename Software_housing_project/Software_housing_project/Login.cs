@@ -15,12 +15,20 @@ namespace Software_housing_project
         private bool isEmployee = false;
         private bool isOpenEmployee = false;
         private bool isOpenStudent = false;
-        House house = new House();
+        private House house = new House();
+        private EmployeeForm ef;
+        private StudentForm sf;
 
+        public House House
+        {
+            get { return this.house; }
+        }
         public Login()
         {
             InitializeComponent();
             cbxUserType.SelectedIndex = 0;
+            ef = new EmployeeForm(this);
+            sf = new StudentForm(this);
         }
 
         private void BtnLogin_Click(object sender, EventArgs e)
@@ -34,7 +42,7 @@ namespace Software_housing_project
                     isEmployee = true;
                     if (!isOpenEmployee)
                     {
-                        house.Login(isEmployee);
+                        ef.Visible = true;
                         isOpenEmployee = true;
                     }
                     break;
@@ -42,11 +50,22 @@ namespace Software_housing_project
                     isEmployee = false;
                     if (!isOpenStudent)
                     {
-                        house.Login(isEmployee);
+                        sf.Visible = true;
                         isOpenStudent = true;
                     }
                     break;
             }
+        }
+
+        public void updateRules()
+        {
+            sf.updateRules();
+            ef.updateRules();
+        }
+
+        public void updateChores()
+        {
+            ef.updateChores();
         }
     }
 }
