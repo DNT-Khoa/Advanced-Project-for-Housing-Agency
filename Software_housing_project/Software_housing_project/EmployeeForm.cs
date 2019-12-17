@@ -21,7 +21,7 @@ namespace Software_housing_project
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
             foreach (Student student in House.tenants) {
-                lbxTenants.Items.Add($"{student.FirstName} {student.LastName} ID: {student.IdNumber}");
+                lbxTenants.Items.Add($"{student.FirstName} {student.LastName} Id: {student.IdNumber}");
             }
         }
 
@@ -187,41 +187,62 @@ namespace Software_housing_project
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if (complaintsIndex > 0)
+            if (House.complaints.Count != 0)
             {
-                rtbComplaint.Text = House.complaints[--complaintsIndex].GetInfo();
-            }
-            else
-            {
-                //TODO ERROR MESSAGE (This is the first complaint)
-            }
+                if (complaintsIndex > 0)
+                {
+                    rtbComplaint.Text = House.complaints[--complaintsIndex].GetInfo();
+                }
+                else
+                {
+                    MessageBox.Show("This is the first complaint");
 
+                }
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (complaintsIndex < House.complaints.Count - 1)
+            if (House.complaints.Count != 0)
             {
-                rtbComplaint.Text = House.complaints[++complaintsIndex].GetInfo();
-            }
-            else
-            {
-                //TODO ERROR MESSAGE (There are no more complaints)
-            }
+                if (complaintsIndex < House.complaints.Count - 1)
+                {
+                    rtbComplaint.Text = House.complaints[++complaintsIndex].GetInfo();
+                }
+                else
+                {
+                    MessageBox.Show("This is the last complaint. Go back!");
 
+                }
+            }
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)
         {
-            rtbComplaint.Clear();
-            House.complaints.Clear();
-            House.updateComplaints();
+            if(House.complaints.Count > 0)
+            {
+                rtbComplaint.Clear();
+                House.complaints.Clear();
+                House.updateComplaints();
+            }
+            else
+            {
+                MessageBox.Show("List is already empty");
+            }
+           
         }
 
         private void btnClearSelected_Click(object sender, EventArgs e)
         {
-            House.complaints.RemoveAt(complaintsIndex);
-            updateComplaints();
+            if(House.complaints.Count > complaintsIndex)
+            {
+                House.complaints.RemoveAt(complaintsIndex);
+                updateComplaints();
+            }
+            else
+            {
+                MessageBox.Show("There is nothing selected");
+            }          
         }
     }
 }
