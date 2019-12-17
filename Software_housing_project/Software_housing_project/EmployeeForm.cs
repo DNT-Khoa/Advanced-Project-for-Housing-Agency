@@ -52,7 +52,16 @@ namespace Software_housing_project
 
         public void updateComplaints()
         {
-            rtbComplaint.Text = House.complaints[complaintsIndex].GetInfo();
+            int complaintIndex = House.complaints.Count();
+            rtbComplaint.Clear();
+            if (complaintIndex <= 0)
+            {
+                rtbComplaint.Text = House.complaints[0].GetInfo();
+            }
+            else
+            {
+                rtbComplaint.Text = House.complaints[--complaintIndex].GetInfo();
+            }
         }
 
         public void updateChores()
