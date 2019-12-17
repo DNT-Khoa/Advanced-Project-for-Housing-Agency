@@ -88,7 +88,7 @@ namespace Software_housing_project
         public void updateRules()
         {
             List<string> internalRules = GetRules();
-            int lineIndex = 0;
+            int lineIndex = 1;
             if (internalRules != House.rules)
             {
                 lbxRules.Items.Clear();

@@ -28,7 +28,7 @@ namespace Software_housing_project
         public void updateRules()
         {
             List<string> internalRules = GetRules();
-            int lineIndex = 0;
+            int lineIndex = 1;
             if (internalRules != House.rules)
             {
                 lbxRules.Items.Clear();
@@ -127,7 +127,7 @@ namespace Software_housing_project
                 MessageBox.Show("You need to fill the name of the course !");
             } else if (tbxAge.Text == "")
             {
-                MessageBox.Show("I wonder what is the name of the tenant ?");
+                MessageBox.Show("I wonder what is the age of the tenant ?");
             } else if (!isInteger)
             {
                 MessageBox.Show("The age you enter is not an integer !");
