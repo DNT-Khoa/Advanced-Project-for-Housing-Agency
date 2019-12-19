@@ -229,7 +229,7 @@ namespace Software_housing_project
             }
             else
             {
-                MessageBox.Show("List is already empty");
+                MessageBox.Show("There are no current complaints");
             }
            
         }

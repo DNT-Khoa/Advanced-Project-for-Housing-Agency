@@ -20,7 +20,7 @@ namespace Software_housing_project
             House.tenants.Add(new Student("Marta", "Alston", 15, "Fontys", "ICT"));
             House.tenants.Add(new Student("Jim", "Bob", 19, "Fontys", "ICT"));
             House.tenants.Add(new Student("Elvis", "Presley", 20, "Fontys", "ICT"));
-              
+            
             
             InitializeComponent();
             
