@@ -54,7 +54,7 @@ namespace Software_housing_project
 
         public void updateComplaints()
         {
-            rtbComplaint.Text = House.complaints[complaintsIndex].GetInfo();
+            rtbComplaint.Text = parentForm.House.Complaints[complaintsIndex].GetInfo();
         }
 
         public void updateChores()
@@ -189,11 +189,11 @@ namespace Software_housing_project
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if (House.complaints.Count != 0)
+            if (parentForm.House.Complaints.Count != 0)
             {
                 if (complaintsIndex > 0)
                 {
-                    rtbComplaint.Text = House.complaints[--complaintsIndex].GetInfo();
+                    rtbComplaint.Text = parentForm.House.Complaints[--complaintsIndex].GetInfo();
                 }
                 else
                 {
@@ -205,11 +205,11 @@ namespace Software_housing_project
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (House.complaints.Count != 0)
+            if (parentForm.House.Complaints.Count != 0)
             {
-                if (complaintsIndex < House.complaints.Count - 1)
+                if (complaintsIndex < parentForm.House.Complaints.Count - 1)
                 {
-                    rtbComplaint.Text = House.complaints[++complaintsIndex].GetInfo();
+                    rtbComplaint.Text = parentForm.House.Complaints[++complaintsIndex].GetInfo();
                 }
                 else
                 {
@@ -221,11 +221,11 @@ namespace Software_housing_project
 
         private void btnClearAll_Click(object sender, EventArgs e)
         {
-            if(House.complaints.Count > 0)
+            if(parentForm.House.Complaints.Count > 0)
             {
                 rtbComplaint.Clear();
-                House.complaints.Clear();
-                House.updateComplaints();
+                parentForm.House.Complaints.Clear();
+                parentForm.updateComplaints();
             }
             else
             {
@@ -236,9 +236,9 @@ namespace Software_housing_project
 
         private void btnClearSelected_Click(object sender, EventArgs e)
         {
-            if(House.complaints.Count > complaintsIndex)
+            if(parentForm.House.Complaints.Count > complaintsIndex)
             {
-                House.complaints.RemoveAt(complaintsIndex);
+                parentForm.House.Complaints.RemoveAt(complaintsIndex);
                 updateComplaints();
             }
             else

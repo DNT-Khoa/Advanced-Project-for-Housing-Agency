@@ -13,8 +13,8 @@ namespace Software_housing_project
 {
     public partial class StudentForm : Form
     {
-        private int complaintTracker = House.complaints.Count;
         private Login parentForm;
+        private int complaintTracker; 
         public StudentForm(Login parentForm)
         {
             House.tenants.Add(new Student("Marta", "Alston", 15, "Fontys", "ICT"));
@@ -23,9 +23,12 @@ namespace Software_housing_project
               
             
             InitializeComponent();
+            
+            this.parentForm = parentForm;
+            this.complaintTracker = parentForm.House.Complaints.Count;
+
             mcEvents.MinDate = DateTime.Now;
             mcChore.MinDate = DateTime.Now;
-            this.parentForm = parentForm;
             //Can file complaint as far as a year in the past and a year in the future.
             DateTime startOfPeriod = new DateTime(DateTime.Now.Year - 1, DateTime.Now.Month, DateTime.Now.Day);
             DateTime endOfPeriod = new DateTime(DateTime.Now.Year + 1, DateTime.Now.Month, DateTime.Now.Day);
@@ -60,7 +63,7 @@ namespace Software_housing_project
                 {
                     Chore chore = new Chore(cbxChore.SelectedItem.ToString(), cbxName.SelectedItem.ToString(), selectedDate);
 
-                    parentForm.House.AddChore(chore);
+                    parentForm.House.Chores.Add(chore);
 
                     clbChores.Items.Add(chore.GetInfo());
 
@@ -144,21 +147,21 @@ namespace Software_housing_project
             else
             {
                 Complaint complaint = new Complaint(selectedDate, rtbDescription.Text);
-                House.complaints.Add(complaint);
+                parentForm.House.Complaints.Add(complaint);
                 rtbComplaints.Text = complaint.GetInfo();
-                House.updateComplaints();
+                parentForm.updateComplaints();
             }
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if(House.complaints.Count != 0)
+            if(parentForm.House.Complaints.Count != 0)
             {
                 btnNext.Enabled = true;
 
                 if (complaintTracker > 0)
                 {
-                    rtbComplaints.Text = House.complaints[--complaintTracker].GetInfo();
+                    rtbComplaints.Text = parentForm.House.Complaints[--complaintTracker].GetInfo();
                 }
                 else
                 {
@@ -173,13 +176,13 @@ namespace Software_housing_project
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if(House.complaints.Count != 0)
+            if(parentForm.House.Complaints.Count != 0)
             {
                 btnPrevious.Enabled = true;
 
-                if (complaintTracker < House.complaints.Count -1)
+                if (complaintTracker < parentForm.House.Complaints.Count -1)
                 {
-                    rtbComplaints.Text = House.complaints[++complaintTracker].GetInfo();
+                    rtbComplaints.Text = parentForm.House.Complaints[++complaintTracker].GetInfo();
                 }
                 else
                 {
@@ -206,7 +209,7 @@ namespace Software_housing_project
                         if (rtbEventDescription.Text != "" && rtbEventDescription.Text != "Description")
                         {
                             string description = rtbEventDescription.Text;
-                            House.events.Add(new Event(name, title, date, description));
+                            parentForm.House.Events.Add(new Event(name, title, date, description));
                             clbEvents.Items.Add($"{date} {title} : {name}");
                         }
                         else
@@ -240,7 +243,7 @@ namespace Software_housing_project
             }
             else
             {
-                string info = House.events[index].GetInfo();
+                string info = parentForm.House.Events[index].GetInfo();
                 MessageBox.Show(info);
             }
         }
@@ -249,7 +252,7 @@ namespace Software_housing_project
         public void updateComplaints()
         {
             rtbComplaints.Clear();
-            rtbComplaints.Text = House.complaints[complaintTracker].GetInfo();
+            rtbComplaints.Text = parentForm.House.Complaints[complaintTracker].GetInfo();
         }
         
         
@@ -258,7 +261,7 @@ namespace Software_housing_project
         {
             parentForm.House.Chores.RemoveAt(this.clbChores.SelectedIndex);
             this.clbChores.Items.Remove(this.clbChores.SelectedItem);
-            House.updateChores();
+            parentForm.updateChores();
         }
 
         private void tbxEventTitle_Click(object sender, EventArgs e)

@@ -10,18 +10,24 @@ namespace Software_housing_project
     {
         public static List<Student> tenants = new List<Student>();
         public static List<string> rules = new List<string>();
-        public static List<Complaint> complaints = new List<Complaint>();
+        private List<Complaint> complaints = new List<Complaint>();
         private List<Chore> chores = new List<Chore>();
-        public static List<Event> events = new List<Event>();
+        private List<Event> events = new List<Event>();
 
-        public void AddChore(Chore chore)
-        {
-            this.chores.Add(chore);
-        }
-
+       
         public List<Chore> Chores
         {
             get { return this.chores; }
+        }
+
+        public List<Event> Events
+        {
+            get { return this.events; }
+        }
+
+        public List<Complaint> Complaints
+        {
+            get { return this.complaints; }
         }
         public static void updateRules()
         {
@@ -29,11 +35,7 @@ namespace Software_housing_project
             //ef.updateRules();
         }
 
-        public static void updateComplaints()
-        {
-            //ef.updateComplaints();
-            //sf.updateComplaints();
-        }
+        
 
         public static void UpdateCheckBoxStudentsName()
         {
@@ -42,11 +44,5 @@ namespace Software_housing_project
                 //sf.UpdateCheckBoxStudentsName();
             }
         }
-
-        public static void updateChores()
-        {
-            //ef.updateChores();
-        }
-
     }
 }
