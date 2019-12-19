@@ -8,13 +8,13 @@ namespace Software_housing_project
 {
     public class House
     {
-        public static List<Student> tenants = new List<Student>();
-        public static List<string> rules = new List<string>();
+        private List<Student> tenants = new List<Student>();
+        private List<string> rules = new List<string>();
         private List<Complaint> complaints = new List<Complaint>();
         private List<Chore> chores = new List<Chore>();
         private List<Event> events = new List<Event>();
 
-       
+
         public List<Chore> Chores
         {
             get { return this.chores; }
@@ -28,6 +28,16 @@ namespace Software_housing_project
         public List<Complaint> Complaints
         {
             get { return this.complaints; }
+        }
+
+        public List<string> Rules
+        {
+            get { return this.rules; }
+        }
+
+        public List<Student> Tenants
+        {
+            get { return this.tenants; }
         }
         
     }

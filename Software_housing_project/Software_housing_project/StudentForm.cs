@@ -17,9 +17,9 @@ namespace Software_housing_project
         private int complaintTracker; 
         public StudentForm(Login parentForm)
         {
-            House.tenants.Add(new Student("Marta", "Alston", 15, "Fontys", "ICT"));
-            House.tenants.Add(new Student("Jim", "Bob", 19, "Fontys", "ICT"));
-            House.tenants.Add(new Student("Elvis", "Presley", 20, "Fontys", "ICT"));
+            parentForm.House.Tenants.Add(new Student("Marta", "Alston", 15, "Fontys", "ICT"));
+            parentForm.House.Tenants.Add(new Student("Jim", "Bob", 19, "Fontys", "ICT"));
+            parentForm.House.Tenants.Add(new Student("Elvis", "Presley", 20, "Fontys", "ICT"));
             
             
             InitializeComponent();
@@ -93,10 +93,10 @@ namespace Software_housing_project
         {
             List<string> internalRules = GetRules();
             int lineIndex = 1;
-            if (internalRules != House.rules)
+            if (internalRules != parentForm.House.Rules)
             {
                 lbxRules.Items.Clear();
-                foreach (string rule in House.rules)
+                foreach (string rule in parentForm.House.Rules)
                 {
                     lbxRules.Items.Add(lineIndex.ToString() + ". " + rule);
                     lineIndex++;
@@ -117,7 +117,7 @@ namespace Software_housing_project
         {
             cbxName.Items.Clear();
             cbxEventHost.Items.Clear();
-            foreach (var student in House.tenants)
+            foreach (var student in parentForm.House.Tenants)
             {
                 cbxName.Items.Add($"{student.FirstName}  Id:{student.IdNumber}");
                 cbxEventHost.Items.Add($"{student.FirstName}  Id:{student.IdNumber}");

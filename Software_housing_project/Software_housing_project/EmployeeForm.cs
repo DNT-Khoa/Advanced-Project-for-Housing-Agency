@@ -22,7 +22,7 @@ namespace Software_housing_project
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
-            foreach (Student student in House.tenants) {
+            foreach (Student student in parentForm.House.Tenants) {
                 lbxTenants.Items.Add($"{student.FirstName} {student.LastName} Id: {student.IdNumber}");
             }
         }
@@ -31,10 +31,10 @@ namespace Software_housing_project
         {
             List<string> internalRules = GetRules();
             int lineIndex = 1;
-            if (internalRules != House.rules)
+            if (internalRules != parentForm.House.Rules)
             {
                 lbxRules.Items.Clear();
-                foreach (string rule in House.rules)
+                foreach (string rule in parentForm.House.Rules)
                 {
                     lbxRules.Items.Add(lineIndex.ToString() + ". " + rule);
                     lineIndex++;
@@ -74,7 +74,7 @@ namespace Software_housing_project
                 rtbRulesToAdd.Text = "";
             } else
             {
-                House.rules.Add(rtbRulesToAdd.Text);
+                parentForm.House.Rules.Add(rtbRulesToAdd.Text);
                 parentForm.updateRules();
                 rtbRulesToAdd.Text = "";
             }
@@ -87,7 +87,7 @@ namespace Software_housing_project
                 MessageBox.Show("There's nothing left to be removed!");
             } else
             {
-                House.rules.Clear();
+                parentForm.House.Rules.Clear();
                 parentForm.updateRules();
             }      
         }
@@ -99,7 +99,7 @@ namespace Software_housing_project
                 MessageBox.Show("Please choose a rule to be removed from the list !");
             } else
             {
-                House.rules.RemoveAt(lbxRules.SelectedIndex);
+                parentForm.House.Rules.RemoveAt(lbxRules.SelectedIndex);
                 parentForm.updateRules();
             }
         }
@@ -150,8 +150,8 @@ namespace Software_housing_project
                 }
                 else
                 {
-                    House.tenants.Add(new Student(tenantFirstName, tenantLastName, tenantAge, tenantSchool, tenantCourse));
-                    lbxTenants.Items.Add($"{tenantFirstName} {tenantLastName} ID: {House.tenants[House.tenants.Count - 1].IdNumber}");
+                    parentForm.House.Tenants.Add(new Student(tenantFirstName, tenantLastName, tenantAge, tenantSchool, tenantCourse));
+                    lbxTenants.Items.Add($"{tenantFirstName} {tenantLastName} ID: {parentForm.House.Tenants[parentForm.House.Tenants.Count - 1].IdNumber}");
                     parentForm.UpdateCheckBoxStudentsName();
 
                     tbxFirstName.Text = "";
@@ -170,7 +170,7 @@ namespace Software_housing_project
                 MessageBox.Show("Please select a tenant to retrieve information from !");
             } else
             {
-                MessageBox.Show(House.tenants[lbxTenants.SelectedIndex].GetInfo());
+                MessageBox.Show(parentForm.House.Tenants[lbxTenants.SelectedIndex].GetInfo());
             }
         }
 
@@ -181,7 +181,7 @@ namespace Software_housing_project
                 MessageBox.Show("Please select a tenant to be removed");
             } else
             {
-                House.tenants.RemoveAt(lbxTenants.SelectedIndex);
+                parentForm.House.Tenants.RemoveAt(lbxTenants.SelectedIndex);
                 lbxTenants.Items.RemoveAt(lbxTenants.SelectedIndex);
                 parentForm.UpdateCheckBoxStudentsName();
             }
