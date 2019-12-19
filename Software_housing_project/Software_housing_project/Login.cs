@@ -71,5 +71,13 @@ namespace Software_housing_project
             ef.updateComplaints();
             sf.updateComplaints();
         }
+
+        public void UpdateCheckBoxStudentsName()
+        {
+            foreach (var student in House.tenants)
+            {
+                sf.UpdateCheckBoxStudentsName();
+            }
+        }
     }
 }
