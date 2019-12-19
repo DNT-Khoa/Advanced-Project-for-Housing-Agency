@@ -12,11 +12,12 @@ namespace Software_housing_project
 {
     public partial class EmployeeForm : Form
     {
-        private int complaintTracker = 0;
-        public EmployeeForm()
+        private int complaintsIndex = 0;
+        private Login parentForm;
+        public EmployeeForm(Login parentForm)
         {
             InitializeComponent();
-
+            this.parentForm = parentForm;
         }
 
         private void EmployeeForm_Load(object sender, EventArgs e)
@@ -53,54 +54,13 @@ namespace Software_housing_project
 
         public void updateComplaints()
         {
-            rtbComplaint.Clear();
-            int numOfItems = House.complaints.Count;
-            if (numOfItems == 0)
-            {
-                rtbComplaint.Text = "There are no current complaints";
-                btnPrevious.Enabled = false;
-                btnNext.Enabled = false;
-            }
-            else if (numOfItems == 1)
-            {
-                complaintTracker = 0;
-                btnPrevious.Enabled = false;
-                btnNext.Enabled = false;
-                rtbComplaint.Text = House.complaints[complaintTracker].GetInfo();
-            }
-            else
-            {
-                if (complaintTracker == 0)
-                {
-                    btnPrevious.Enabled = false;
-                    btnNext.Enabled = true;
-                    rtbComplaint.Text = House.complaints[complaintTracker].GetInfo();
-                }
-                else if (complaintTracker == numOfItems - 1)
-                {
-                    btnNext.Enabled = false;
-                    btnPrevious.Enabled = true;
-                    rtbComplaint.Text = House.complaints[complaintTracker].GetInfo();
-                }
-                else
-                {
-                    btnNext.Enabled = true;
-                    if (complaintTracker == numOfItems)
-                    {
-                        complaintTracker = numOfItems - 1;
-                        btnNext.Enabled = false;
-                    }
-                    
-                    btnPrevious.Enabled = true;
-                    rtbComplaint.Text = House.complaints[complaintTracker].GetInfo();
-                }
-            }
+            rtbComplaint.Text = parentForm.House.Complaints[complaintsIndex].GetInfo();
         }
 
         public void updateChores()
         {
             lbxChores.Items.Clear();
-            foreach (var chore in House.chores)
+            foreach (var chore in parentForm.House.Chores)
             {
                 lbxChores.Items.Add(chore.GetInfo());
             }
@@ -229,23 +189,43 @@ namespace Software_housing_project
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            complaintTracker--;
-            updateComplaints();
+            if (parentForm.House.Complaints.Count != 0)
+            {
+                if (complaintsIndex > 0)
+                {
+                    rtbComplaint.Text = parentForm.House.Complaints[--complaintsIndex].GetInfo();
+                }
+                else
+                {
+                    MessageBox.Show("This is the first complaint");
+
+                }
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            complaintTracker++;
-            updateComplaints();
+            if (parentForm.House.Complaints.Count != 0)
+            {
+                if (complaintsIndex < parentForm.House.Complaints.Count - 1)
+                {
+                    rtbComplaint.Text = parentForm.House.Complaints[++complaintsIndex].GetInfo();
+                }
+                else
+                {
+                    MessageBox.Show("This is the last complaint. Go back!");
+
+                }
+            }
         }
 
         private void btnClearAll_Click(object sender, EventArgs e)
         {
-            if(House.complaints.Count > 0)
+            if(parentForm.House.Complaints.Count > 0)
             {
                 rtbComplaint.Clear();
-                House.complaints.Clear();
-                House.updateComplaints();
+                parentForm.House.Complaints.Clear();
+                parentForm.updateComplaints();
             }
             else
             {
@@ -256,10 +236,10 @@ namespace Software_housing_project
 
         private void btnClearSelected_Click(object sender, EventArgs e)
         {
-            if(House.complaints.Count > 0)
+            if(parentForm.House.Complaints.Count > complaintsIndex)
             {
-                House.complaints.RemoveAt(complaintTracker);
-                House.updateComplaints();
+                parentForm.House.Complaints.RemoveAt(complaintsIndex);
+                updateComplaints();
             }
             else
             {
