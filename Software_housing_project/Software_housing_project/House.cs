@@ -29,20 +29,6 @@ namespace Software_housing_project
         {
             get { return this.complaints; }
         }
-        public static void updateRules()
-        {
-            //sf.updateRules();
-            //ef.updateRules();
-        }
-
         
-
-        public static void UpdateCheckBoxStudentsName()
-        {
-            foreach (var student in House.tenants)
-            {
-                //sf.UpdateCheckBoxStudentsName();
-            }
-        }
     }
 }

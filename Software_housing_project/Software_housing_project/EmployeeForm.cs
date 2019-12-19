@@ -75,7 +75,7 @@ namespace Software_housing_project
             } else
             {
                 House.rules.Add(rtbRulesToAdd.Text);
-                House.updateRules();
+                parentForm.updateRules();
                 rtbRulesToAdd.Text = "";
             }
         }
@@ -88,7 +88,7 @@ namespace Software_housing_project
             } else
             {
                 House.rules.Clear();
-                House.updateRules();
+                parentForm.updateRules();
             }      
         }
 
@@ -100,7 +100,7 @@ namespace Software_housing_project
             } else
             {
                 House.rules.RemoveAt(lbxRules.SelectedIndex);
-                House.updateRules();
+                parentForm.updateRules();
             }
         }
 
@@ -152,7 +152,7 @@ namespace Software_housing_project
                 {
                     House.tenants.Add(new Student(tenantFirstName, tenantLastName, tenantAge, tenantSchool, tenantCourse));
                     lbxTenants.Items.Add($"{tenantFirstName} {tenantLastName} ID: {House.tenants[House.tenants.Count - 1].IdNumber}");
-                    House.UpdateCheckBoxStudentsName();
+                    parentForm.UpdateCheckBoxStudentsName();
 
                     tbxFirstName.Text = "";
                     tbxLastName.Text = "";
@@ -183,7 +183,7 @@ namespace Software_housing_project
             {
                 House.tenants.RemoveAt(lbxTenants.SelectedIndex);
                 lbxTenants.Items.RemoveAt(lbxTenants.SelectedIndex);
-                House.UpdateCheckBoxStudentsName();
+                parentForm.UpdateCheckBoxStudentsName();
             }
         }
 
