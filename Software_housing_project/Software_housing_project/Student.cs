@@ -13,7 +13,6 @@ namespace Software_housing_project
         private string School;
         private string Course;
         private int ComplaintsMade;
-        private StudentForm sf;
 
         public string FirstName { get; }
         public string LastName { get; }
