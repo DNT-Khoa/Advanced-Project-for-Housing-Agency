@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.cbxUserType = new System.Windows.Forms.ComboBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.pbxUserIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserIcon)).BeginInit();
             this.SuspendLayout();
@@ -40,41 +42,61 @@
             this.cbxUserType.Items.AddRange(new object[] {
             "Student",
             "Employee"});
-            this.cbxUserType.Location = new System.Drawing.Point(117, 180);
+            this.cbxUserType.Location = new System.Drawing.Point(78, 157);
+            this.cbxUserType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxUserType.Name = "cbxUserType";
-            this.cbxUserType.Size = new System.Drawing.Size(118, 24);
+            this.cbxUserType.Size = new System.Drawing.Size(110, 21);
             this.cbxUserType.TabIndex = 1;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(148, 214);
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Location = new System.Drawing.Point(78, 193);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(60, 33);
+            this.btnLogin.Size = new System.Drawing.Size(110, 39);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(92, 138);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Select Role";
+            // 
             // pbxUserIcon
             // 
-            this.pbxUserIcon.Location = new System.Drawing.Point(104, 33);
+            this.pbxUserIcon.Image = global::Software_housing_project.Properties.Resources.avatar;
+            this.pbxUserIcon.Location = new System.Drawing.Point(78, 11);
+            this.pbxUserIcon.Margin = new System.Windows.Forms.Padding(2);
             this.pbxUserIcon.Name = "pbxUserIcon";
-            this.pbxUserIcon.Size = new System.Drawing.Size(147, 141);
+            this.pbxUserIcon.Size = new System.Drawing.Size(110, 115);
+            this.pbxUserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxUserIcon.TabIndex = 3;
             this.pbxUserIcon.TabStop = false;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 267);
+            this.ClientSize = new System.Drawing.Size(252, 243);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pbxUserIcon);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.cbxUserType);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserIcon)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -83,5 +105,6 @@
         private System.Windows.Forms.ComboBox cbxUserType;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox pbxUserIcon;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -29,11 +29,17 @@ namespace Software_housing_project
 
             mcEvents.MinDate = DateTime.Now;
             mcChore.MinDate = DateTime.Now;
+
+            //Can add chore up to one week in the future.
+            mcChore.MaxDate = DateTime.ParseExact(DateTime.Now.AddDays(7).ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            
             //Can file complaint as far as a year in the past and a year in the future.
             DateTime startOfPeriod = new DateTime(DateTime.Now.Year - 1, DateTime.Now.Month, DateTime.Now.Day);
-            DateTime endOfPeriod = new DateTime(DateTime.Now.Year + 1, DateTime.Now.Month, DateTime.Now.Day);
+            //Can arrange events up to a year in the future.
+            DateTime startOfPeriodEvents = new DateTime(DateTime.Now.Year + 1, DateTime.Now.Month, DateTime.Now.Day);
+            mcEvents.MaxDate = DateTime.ParseExact(startOfPeriodEvents.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             mcComplaint.MinDate = DateTime.ParseExact(startOfPeriod.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            mcComplaint.MaxDate = DateTime.ParseExact(endOfPeriod.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            mcComplaint.MaxDate = DateTime.ParseExact(DateTime.Now.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             UpdateCheckBoxStudentsName();
             UpdateChoresDescriptions();
         }
@@ -262,20 +268,6 @@ namespace Software_housing_project
             parentForm.House.Chores.RemoveAt(this.clbChores.SelectedIndex);
             this.clbChores.Items.Remove(this.clbChores.SelectedItem);
             parentForm.updateChores();
-        }
-
-        private void tbxEventTitle_Click(object sender, EventArgs e)
-        {
-            tbxEventTitle.Clear();
-        }
-        private void rtbEventDescription_Click(object sender, EventArgs e)
-        {
-            rtbEventDescription.Clear();
-        }
-
-        private void rtbDescription_Click(object sender, EventArgs e)
-        {
-            rtbDescription.Clear();
         }
     }
 }
