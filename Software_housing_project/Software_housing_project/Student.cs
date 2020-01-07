@@ -12,7 +12,6 @@ namespace Software_housing_project
         private int Age;
         private string School;
         private string Course;
-        private int ComplaintsMade;
 
         public string FirstName { get; }
         public string LastName { get; }
@@ -27,15 +26,13 @@ namespace Software_housing_project
             this.Age = age;
             this.School = school;
             this.Course = course;
-            this.ComplaintsMade = 0;
         }
 
         public string GetInfo()
         {
             return $"First Name: {this.FirstName}\nLast Name: {LastName}\n" +
                 $"ID Number : {this.IdNumber}\nAge: {this.Age} \n" +
-                $"School: {this.School}\nCourse: {this.Course} \n" +
-                $"Complaints made: {this.ComplaintsMade}";
+                $"School: {this.School}\nCourse: {this.Course} \n";
         }
     }
 }
