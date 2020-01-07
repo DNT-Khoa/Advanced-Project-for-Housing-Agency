@@ -74,7 +74,7 @@ namespace Software_housing_project
 
         public void UpdateCheckBoxStudentsName()
         {
-            foreach (var student in House.tenants)
+            foreach (var student in this.House.Tenants)
             {
                 sf.UpdateCheckBoxStudentsName();
             }
