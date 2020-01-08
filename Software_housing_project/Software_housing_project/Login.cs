@@ -57,19 +57,19 @@ namespace Software_housing_project
 
         public void updateRules()
         {
-            sf.updateRules();
+            sf.UpdateRules();
             ef.updateRules();
         }
 
         public void updateChores()
         {
-            ef.updateChores();
+            ef.UpdateChores();
         }
 
         public void updateComplaints()
         {
-            ef.updateComplaints();
-            sf.updateComplaints();
+            ef.UpdateComplaints();
+            sf.UpdateComplaints();
         }
 
         public void UpdateCheckBoxStudentsName()

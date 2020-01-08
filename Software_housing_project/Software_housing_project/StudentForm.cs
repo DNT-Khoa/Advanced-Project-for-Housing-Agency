@@ -65,7 +65,7 @@ namespace Software_housing_project
             }
             else
             {
-                if (choreIsValid(cbxChore.SelectedItem.ToString(), cbxName.SelectedItem.ToString(), selectedDate))
+                if (ChoreIsValid(cbxChore.SelectedItem.ToString(), cbxName.SelectedItem.ToString(), selectedDate))
                 {
                     Chore chore = new Chore(cbxChore.SelectedItem.ToString(), cbxName.SelectedItem.ToString(), selectedDate);
 
@@ -83,7 +83,7 @@ namespace Software_housing_project
             }    
         }
 
-        private bool choreIsValid(string choreName, string studentName, string choreDate)
+        private bool ChoreIsValid(string choreName, string studentName, string choreDate)
         {
             foreach(Chore chore in parentForm.House.Chores)
             {
@@ -95,7 +95,7 @@ namespace Software_housing_project
             return true;
         }
         //Rules page
-        public void updateRules()
+        public void UpdateRules()
         {
             List<string> internalRules = GetRules();
             int lineIndex = 1;
@@ -255,14 +255,13 @@ namespace Software_housing_project
         }
 
 
-        public void updateComplaints()
+        public void UpdateComplaints()
         {
             rtbComplaints.Clear();
             rtbComplaints.Text = parentForm.House.Complaints[complaintTracker].GetInfo();
         }
         
         
-
         private void clbChores_DoubleClick(object sender, EventArgs e)
         {
             parentForm.House.Chores.RemoveAt(this.clbChores.SelectedIndex);

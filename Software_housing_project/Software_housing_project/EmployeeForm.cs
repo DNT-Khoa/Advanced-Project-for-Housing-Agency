@@ -52,12 +52,12 @@ namespace Software_housing_project
             return internalRules;
         }
 
-        public void updateComplaints()
+        public void UpdateComplaints()
         {
             rtbComplaint.Text = parentForm.House.Complaints[complaintsIndex].GetInfo();
         }
 
-        public void updateChores()
+        public void UpdateChores()
         {
             lbxChores.Items.Clear();
             foreach (var chore in parentForm.House.Chores)
@@ -239,7 +239,7 @@ namespace Software_housing_project
             if(parentForm.House.Complaints.Count > complaintsIndex)
             {
                 parentForm.House.Complaints.RemoveAt(complaintsIndex);
-                updateComplaints();
+                UpdateComplaints();
             }
             else
             {
