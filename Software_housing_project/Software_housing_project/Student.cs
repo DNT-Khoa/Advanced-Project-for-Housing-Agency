@@ -15,17 +15,18 @@ namespace Software_housing_project
 
         public string FirstName { get; }
         public string LastName { get; }
-        public int IdNumber { get { return idCounter; }}
+        public int IdNumber { get; }
 
         public Student(string firstName, string lastName, int age, string school,
             string course)
         {
             this.FirstName = firstName;
             this.LastName = lastName;
-            idCounter++;
             this.Age = age;
             this.School = school;
             this.Course = course;
+            this.IdNumber = idCounter;
+            idCounter++;
         }
 
         public string GetInfo()

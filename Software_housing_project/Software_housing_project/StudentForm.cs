@@ -18,11 +18,10 @@ namespace Software_housing_project
         public StudentForm(LoginForm parentForm)
         {
             InitializeComponent();
-
-            FillDefaultTenants();
-
+            
             this.parentForm = parentForm;
             this.complaintTracker = parentForm.House.Complaints.Count;
+            FillDefaultTenants();
 
             mcEvents.MinDate = DateTime.Now;
             mcChore.MinDate = DateTime.Now;
@@ -32,13 +31,11 @@ namespace Software_housing_project
             
             //Can file complaint as far as a year in the past and a year in the future.
             DateTime startOfPeriod = new DateTime(DateTime.Now.Year - 1, DateTime.Now.Month, DateTime.Now.Day);
-
             //Can arrange events up to a year in the future.
             DateTime startOfPeriodEvents = new DateTime(DateTime.Now.Year + 1, DateTime.Now.Month, DateTime.Now.Day);
             mcEvents.MaxDate = DateTime.ParseExact(startOfPeriodEvents.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             mcComplaint.MinDate = DateTime.ParseExact(startOfPeriod.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             mcComplaint.MaxDate = DateTime.ParseExact(DateTime.Now.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-
             UpdateCheckBoxStudentsName();
             UpdateChoresDescriptions();
         }
