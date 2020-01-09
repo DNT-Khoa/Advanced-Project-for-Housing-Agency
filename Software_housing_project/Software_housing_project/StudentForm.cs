@@ -17,13 +17,10 @@ namespace Software_housing_project
         private int complaintTracker; 
         public StudentForm(LoginForm parentForm)
         {
-            parentForm.House.Tenants.Add(new Student("Marta", "Alston", 15, "Fontys", "ICT"));
-            parentForm.House.Tenants.Add(new Student("Jim", "Bob", 19, "Fontys", "ICT"));
-            parentForm.House.Tenants.Add(new Student("Elvis", "Presley", 20, "Fontys", "ICT"));
-            
-            
             InitializeComponent();
-            
+
+            FillDefaultTenants();
+
             this.parentForm = parentForm;
             this.complaintTracker = parentForm.House.Complaints.Count;
 
@@ -35,15 +32,23 @@ namespace Software_housing_project
             
             //Can file complaint as far as a year in the past and a year in the future.
             DateTime startOfPeriod = new DateTime(DateTime.Now.Year - 1, DateTime.Now.Month, DateTime.Now.Day);
+
             //Can arrange events up to a year in the future.
             DateTime startOfPeriodEvents = new DateTime(DateTime.Now.Year + 1, DateTime.Now.Month, DateTime.Now.Day);
             mcEvents.MaxDate = DateTime.ParseExact(startOfPeriodEvents.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             mcComplaint.MinDate = DateTime.ParseExact(startOfPeriod.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
             mcComplaint.MaxDate = DateTime.ParseExact(DateTime.Now.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
             UpdateCheckBoxStudentsName();
             UpdateChoresDescriptions();
         }
 
+        private void FillDefaultTenants()
+        {
+            parentForm.House.Tenants.Add(new Student("Marta", "Alston", 15, "Fontys", "ICT"));
+            parentForm.House.Tenants.Add(new Student("Jim", "Bob", 19, "Fontys", "ICT"));
+            parentForm.House.Tenants.Add(new Student("Elvis", "Presley", 20, "Fontys", "ICT"));
+        }
         private void btnAddChore_Click(object sender, EventArgs e)
         {
             string selectedDate = mcChore.SelectionRange.Start.ToShortDateString();
