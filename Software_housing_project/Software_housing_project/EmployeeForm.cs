@@ -13,8 +13,8 @@ namespace Software_housing_project
     public partial class EmployeeForm : Form
     {
         private int complaintsIndex = 0;
-        private Login parentForm;
-        public EmployeeForm(Login parentForm)
+        private LoginForm parentForm;
+        public EmployeeForm(LoginForm parentForm)
         {
             InitializeComponent();
             this.parentForm = parentForm;

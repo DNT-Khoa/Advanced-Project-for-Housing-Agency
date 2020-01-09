@@ -13,9 +13,9 @@ namespace Software_housing_project
 {
     public partial class StudentForm : Form
     {
-        private Login parentForm;
+        private LoginForm parentForm;
         private int complaintTracker; 
-        public StudentForm(Login parentForm)
+        public StudentForm(LoginForm parentForm)
         {
             parentForm.House.Tenants.Add(new Student("Marta", "Alston", 15, "Fontys", "ICT"));
             parentForm.House.Tenants.Add(new Student("Jim", "Bob", 19, "Fontys", "ICT"));

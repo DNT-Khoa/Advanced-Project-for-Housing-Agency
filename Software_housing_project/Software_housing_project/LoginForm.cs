@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Software_housing_project
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
         
         private bool isOpenEmployee = false;
@@ -23,7 +23,7 @@ namespace Software_housing_project
         {
             get { return this.house; }
         }
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
             cbxUserType.SelectedIndex = 0;
