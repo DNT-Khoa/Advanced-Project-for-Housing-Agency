@@ -27,7 +27,7 @@ namespace Software_housing_project
             }
         }
 
-        public void updateRules()
+        public void UpdateRules()
         {
             List<string> internalRules = GetRules();
             int lineIndex = 1;
@@ -75,7 +75,7 @@ namespace Software_housing_project
             } else
             {
                 parentForm.House.Rules.Add(rtbRulesToAdd.Text);
-                parentForm.updateRules();
+                parentForm.UpdateRules();
                 rtbRulesToAdd.Text = "";
             }
         }
@@ -88,7 +88,7 @@ namespace Software_housing_project
             } else
             {
                 parentForm.House.Rules.Clear();
-                parentForm.updateRules();
+                parentForm.UpdateRules();
             }      
         }
 
@@ -100,7 +100,7 @@ namespace Software_housing_project
             } else
             {
                 parentForm.House.Rules.RemoveAt(lbxRules.SelectedIndex);
-                parentForm.updateRules();
+                parentForm.UpdateRules();
             }
         }
 
@@ -225,7 +225,7 @@ namespace Software_housing_project
             {
                 rtbComplaint.Clear();
                 parentForm.House.Complaints.Clear();
-                parentForm.updateComplaints();
+                parentForm.UpdateComplaints();
             }
             else
             {

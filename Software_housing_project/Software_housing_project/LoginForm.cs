@@ -55,18 +55,18 @@ namespace Software_housing_project
             }
         }
 
-        public void updateRules()
+        public void UpdateRules()
         {
             sf.UpdateRules();
-            ef.updateRules();
+            ef.UpdateRules();
         }
 
-        public void updateChores()
+        public void UpdateChores()
         {
             ef.UpdateChores();
         }
 
-        public void updateComplaints()
+        public void UpdateComplaints()
         {
             ef.UpdateComplaints();
             sf.UpdateComplaints();

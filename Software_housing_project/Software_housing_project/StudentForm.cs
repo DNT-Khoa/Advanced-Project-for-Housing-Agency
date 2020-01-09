@@ -73,7 +73,7 @@ namespace Software_housing_project
 
                     clbChores.Items.Add(chore.GetInfo());
 
-                    parentForm.updateChores();
+                    parentForm.UpdateChores();
                 }
                 else
                 {
@@ -155,7 +155,7 @@ namespace Software_housing_project
                 Complaint complaint = new Complaint(selectedDate, rtbDescription.Text);
                 parentForm.House.Complaints.Add(complaint);
                 rtbComplaints.Text = complaint.GetInfo();
-                parentForm.updateComplaints();
+                parentForm.UpdateComplaints();
             }
         }
 
@@ -266,7 +266,7 @@ namespace Software_housing_project
         {
             parentForm.House.Chores.RemoveAt(this.clbChores.SelectedIndex);
             this.clbChores.Items.Remove(this.clbChores.SelectedItem);
-            parentForm.updateChores();
+            parentForm.UpdateChores();
         }
     }
 }
