@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             this.tcTabControl = new System.Windows.Forms.TabControl();
             this.tpChores = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.clbChores = new System.Windows.Forms.ListBox();
@@ -64,8 +66,7 @@
             this.tbxEventTitle = new System.Windows.Forms.TextBox();
             this.mcEvents = new System.Windows.Forms.MonthCalendar();
             this.clbEvents = new System.Windows.Forms.CheckedListBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.tcTabControl.SuspendLayout();
             this.tpChores.SuspendLayout();
             this.tpComplaints.SuspendLayout();
@@ -80,7 +81,7 @@
             this.tcTabControl.Controls.Add(this.tpRules);
             this.tcTabControl.Controls.Add(this.tpEvents);
             this.tcTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcTabControl.Location = new System.Drawing.Point(3, 12);
+            this.tcTabControl.Location = new System.Drawing.Point(0, 71);
             this.tcTabControl.Name = "tcTabControl";
             this.tcTabControl.SelectedIndex = 0;
             this.tcTabControl.Size = new System.Drawing.Size(728, 356);
@@ -104,6 +105,26 @@
             this.tpChores.Size = new System.Drawing.Size(720, 318);
             this.tpChores.TabIndex = 0;
             this.tpChores.Text = "Chores";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(238, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(81, 17);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Select Date";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(531, 15);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(59, 17);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Chores";
             // 
             // label11
             // 
@@ -170,7 +191,7 @@
             // 
             // cbxName
             // 
-            this.cbxName.BackColor = System.Drawing.Color.Red;
+            this.cbxName.BackColor = System.Drawing.SystemColors.Window;
             this.cbxName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxName.FormattingEnabled = true;
@@ -474,32 +495,23 @@
             this.clbEvents.Size = new System.Drawing.Size(266, 166);
             this.clbEvents.TabIndex = 0;
             // 
-            // label12
+            // label14
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(531, 15);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 17);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Chores";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(238, 20);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(81, 17);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "Select Date";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(209, 22);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(304, 37);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Welcome, Student!";
             // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(731, 371);
+            this.ClientSize = new System.Drawing.Size(730, 427);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.tcTabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -515,6 +527,7 @@
             this.tpEvents.ResumeLayout(false);
             this.tpEvents.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -557,6 +570,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
     }
 }
 

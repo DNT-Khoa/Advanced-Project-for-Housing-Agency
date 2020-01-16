@@ -64,6 +64,7 @@
             this.tbxSchool = new System.Windows.Forms.TextBox();
             this.tbxLastName = new System.Windows.Forms.TextBox();
             this.tbxFirstName = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpChores.SuspendLayout();
             this.tpComplaints.SuspendLayout();
@@ -78,7 +79,7 @@
             this.tabControl1.Controls.Add(this.tpRules);
             this.tabControl1.Controls.Add(this.tpTenants);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 11);
+            this.tabControl1.Location = new System.Drawing.Point(2, 58);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(784, 435);
@@ -471,12 +472,23 @@
             this.tbxFirstName.Size = new System.Drawing.Size(128, 23);
             this.tbxFirstName.TabIndex = 0;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(230, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(335, 37);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Welcome, Employee!";
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(798, 423);
+            this.ClientSize = new System.Drawing.Size(788, 495);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeeForm";
@@ -492,6 +504,7 @@
             this.tpTenants.ResumeLayout(false);
             this.tpTenants.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -532,5 +545,6 @@
         private System.Windows.Forms.RichTextBox rtbComplaint;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label11;
     }
 }
