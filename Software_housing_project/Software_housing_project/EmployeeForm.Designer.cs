@@ -77,6 +77,7 @@
             this.tabControl1.Controls.Add(this.tpComplaints);
             this.tabControl1.Controls.Add(this.tpRules);
             this.tabControl1.Controls.Add(this.tpTenants);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 11);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -85,53 +86,55 @@
             // 
             // tpChores
             // 
+            this.tpChores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tpChores.Controls.Add(this.label1);
             this.tpChores.Controls.Add(this.lbxChores);
-            this.tpChores.Location = new System.Drawing.Point(4, 22);
+            this.tpChores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tpChores.Location = new System.Drawing.Point(4, 34);
             this.tpChores.Name = "tpChores";
             this.tpChores.Padding = new System.Windows.Forms.Padding(3);
-            this.tpChores.Size = new System.Drawing.Size(776, 409);
+            this.tpChores.Size = new System.Drawing.Size(776, 397);
             this.tpChores.TabIndex = 0;
             this.tpChores.Text = "Chores";
-            this.tpChores.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(340, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 17);
+            this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Chores List";
+            this.label1.Text = "Chores";
             // 
             // lbxChores
             // 
             this.lbxChores.FormattingEnabled = true;
+            this.lbxChores.ItemHeight = 16;
             this.lbxChores.Location = new System.Drawing.Point(263, 78);
             this.lbxChores.Name = "lbxChores";
-            this.lbxChores.Size = new System.Drawing.Size(229, 264);
+            this.lbxChores.Size = new System.Drawing.Size(229, 260);
             this.lbxChores.TabIndex = 0;
             // 
             // tpComplaints
             // 
+            this.tpComplaints.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tpComplaints.Controls.Add(this.rtbComplaint);
             this.tpComplaints.Controls.Add(this.btnClearSelected);
             this.tpComplaints.Controls.Add(this.btnClearAll);
             this.tpComplaints.Controls.Add(this.btnNext);
             this.tpComplaints.Controls.Add(this.btnPrevious);
             this.tpComplaints.Controls.Add(this.label2);
-            this.tpComplaints.Location = new System.Drawing.Point(4, 22);
+            this.tpComplaints.Location = new System.Drawing.Point(4, 34);
             this.tpComplaints.Name = "tpComplaints";
             this.tpComplaints.Padding = new System.Windows.Forms.Padding(3);
-            this.tpComplaints.Size = new System.Drawing.Size(776, 409);
+            this.tpComplaints.Size = new System.Drawing.Size(776, 397);
             this.tpComplaints.TabIndex = 1;
             this.tpComplaints.Text = "Complaints";
-            this.tpComplaints.UseVisualStyleBackColor = true;
             // 
             // rtbComplaint
             // 
-            this.rtbComplaint.Enabled = false;
+            this.rtbComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbComplaint.Location = new System.Drawing.Point(207, 58);
             this.rtbComplaint.Margin = new System.Windows.Forms.Padding(2);
             this.rtbComplaint.Name = "rtbComplaint";
@@ -141,60 +144,67 @@
             // 
             // btnClearSelected
             // 
-            this.btnClearSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearSelected.Location = new System.Drawing.Point(496, 175);
+            this.btnClearSelected.BackColor = System.Drawing.Color.Red;
+            this.btnClearSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearSelected.ForeColor = System.Drawing.Color.White;
+            this.btnClearSelected.Location = new System.Drawing.Point(493, 174);
             this.btnClearSelected.Name = "btnClearSelected";
-            this.btnClearSelected.Size = new System.Drawing.Size(75, 52);
+            this.btnClearSelected.Size = new System.Drawing.Size(87, 52);
             this.btnClearSelected.TabIndex = 5;
             this.btnClearSelected.Text = "Clear Selected";
-            this.btnClearSelected.UseVisualStyleBackColor = true;
+            this.btnClearSelected.UseVisualStyleBackColor = false;
             this.btnClearSelected.Click += new System.EventHandler(this.btnClearSelected_Click);
             // 
             // btnClearAll
             // 
-            this.btnClearAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearAll.BackColor = System.Drawing.Color.Red;
+            this.btnClearAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearAll.ForeColor = System.Drawing.Color.White;
             this.btnClearAll.Location = new System.Drawing.Point(493, 291);
             this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(78, 40);
+            this.btnClearAll.Size = new System.Drawing.Size(87, 40);
             this.btnClearAll.TabIndex = 4;
             this.btnClearAll.Text = "Clear All";
-            this.btnClearAll.UseVisualStyleBackColor = true;
+            this.btnClearAll.UseVisualStyleBackColor = false;
             this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
             // 
             // btnNext
             // 
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(388, 342);
+            this.btnNext.Location = new System.Drawing.Point(388, 336);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(77, 40);
             this.btnNext.TabIndex = 3;
             this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevious
             // 
+            this.btnPrevious.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnPrevious.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevious.Location = new System.Drawing.Point(207, 342);
+            this.btnPrevious.Location = new System.Drawing.Point(207, 336);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(75, 40);
             this.btnPrevious.TabIndex = 2;
             this.btnPrevious.Text = "Previous";
-            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.UseVisualStyleBackColor = false;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(289, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.Size = new System.Drawing.Size(87, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Complaints";
             // 
             // tpRules
             // 
+            this.tpRules.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tpRules.Controls.Add(this.label10);
             this.tpRules.Controls.Add(this.label5);
             this.tpRules.Controls.Add(this.btnRemoveSelected);
@@ -202,78 +212,86 @@
             this.tpRules.Controls.Add(this.lbxRules);
             this.tpRules.Controls.Add(this.btnAddToList);
             this.tpRules.Controls.Add(this.rtbRulesToAdd);
-            this.tpRules.Location = new System.Drawing.Point(4, 22);
+            this.tpRules.Location = new System.Drawing.Point(4, 34);
             this.tpRules.Margin = new System.Windows.Forms.Padding(2);
             this.tpRules.Name = "tpRules";
             this.tpRules.Padding = new System.Windows.Forms.Padding(2);
-            this.tpRules.Size = new System.Drawing.Size(776, 409);
+            this.tpRules.Size = new System.Drawing.Size(776, 397);
             this.tpRules.TabIndex = 2;
             this.tpRules.Text = "Rules";
-            this.tpRules.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(580, 14);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 17);
+            this.label10.Size = new System.Drawing.Size(49, 17);
             this.label10.TabIndex = 6;
             this.label10.Text = "Rules";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(125, 14);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 17);
+            this.label5.Size = new System.Drawing.Size(88, 17);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Write the rule";
+            this.label5.Text = "Define rule";
             // 
             // btnRemoveSelected
             // 
-            this.btnRemoveSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveSelected.BackColor = System.Drawing.Color.Red;
+            this.btnRemoveSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveSelected.ForeColor = System.Drawing.Color.White;
             this.btnRemoveSelected.Location = new System.Drawing.Point(454, 314);
             this.btnRemoveSelected.Name = "btnRemoveSelected";
             this.btnRemoveSelected.Size = new System.Drawing.Size(105, 48);
             this.btnRemoveSelected.TabIndex = 4;
             this.btnRemoveSelected.Text = "Remove Selected";
-            this.btnRemoveSelected.UseVisualStyleBackColor = true;
+            this.btnRemoveSelected.UseVisualStyleBackColor = false;
             this.btnRemoveSelected.Click += new System.EventHandler(this.btnRemoveSelected_Click);
             // 
             // btnRemoveAll
             // 
-            this.btnRemoveAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveAll.BackColor = System.Drawing.Color.Red;
+            this.btnRemoveAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveAll.ForeColor = System.Drawing.Color.White;
             this.btnRemoveAll.Location = new System.Drawing.Point(640, 314);
             this.btnRemoveAll.Name = "btnRemoveAll";
             this.btnRemoveAll.Size = new System.Drawing.Size(104, 48);
             this.btnRemoveAll.TabIndex = 3;
             this.btnRemoveAll.Text = "Remove All";
-            this.btnRemoveAll.UseVisualStyleBackColor = true;
+            this.btnRemoveAll.UseVisualStyleBackColor = false;
             this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
             // 
             // lbxRules
             // 
+            this.lbxRules.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxRules.FormattingEnabled = true;
+            this.lbxRules.ItemHeight = 16;
             this.lbxRules.Location = new System.Drawing.Point(454, 46);
             this.lbxRules.Name = "lbxRules";
-            this.lbxRules.Size = new System.Drawing.Size(290, 238);
+            this.lbxRules.Size = new System.Drawing.Size(290, 228);
             this.lbxRules.TabIndex = 2;
             // 
             // btnAddToList
             // 
-            this.btnAddToList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddToList.BackColor = System.Drawing.Color.Lime;
+            this.btnAddToList.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddToList.ForeColor = System.Drawing.Color.Black;
             this.btnAddToList.Location = new System.Drawing.Point(128, 314);
             this.btnAddToList.Name = "btnAddToList";
-            this.btnAddToList.Size = new System.Drawing.Size(98, 48);
+            this.btnAddToList.Size = new System.Drawing.Size(106, 48);
             this.btnAddToList.TabIndex = 1;
             this.btnAddToList.Text = "Add To List";
-            this.btnAddToList.UseVisualStyleBackColor = true;
+            this.btnAddToList.UseVisualStyleBackColor = false;
             this.btnAddToList.Click += new System.EventHandler(this.btnAddToList_Click);
             // 
             // rtbRulesToAdd
             // 
+            this.rtbRulesToAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbRulesToAdd.Location = new System.Drawing.Point(17, 46);
             this.rtbRulesToAdd.Name = "rtbRulesToAdd";
             this.rtbRulesToAdd.Size = new System.Drawing.Size(331, 236);
@@ -282,6 +300,7 @@
             // 
             // tpTenants
             // 
+            this.tpTenants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.tpTenants.Controls.Add(this.btnRemoveTenant);
             this.tpTenants.Controls.Add(this.btnShowInfo);
             this.tpTenants.Controls.Add(this.lbxTenants);
@@ -297,63 +316,69 @@
             this.tpTenants.Controls.Add(this.tbxSchool);
             this.tpTenants.Controls.Add(this.tbxLastName);
             this.tpTenants.Controls.Add(this.tbxFirstName);
-            this.tpTenants.Location = new System.Drawing.Point(4, 22);
+            this.tpTenants.Location = new System.Drawing.Point(4, 34);
             this.tpTenants.Name = "tpTenants";
             this.tpTenants.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTenants.Size = new System.Drawing.Size(776, 409);
+            this.tpTenants.Size = new System.Drawing.Size(776, 397);
             this.tpTenants.TabIndex = 3;
             this.tpTenants.Text = "Tenants";
-            this.tpTenants.UseVisualStyleBackColor = true;
             // 
             // btnRemoveTenant
             // 
-            this.btnRemoveTenant.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveTenant.Location = new System.Drawing.Point(650, 329);
+            this.btnRemoveTenant.BackColor = System.Drawing.Color.Red;
+            this.btnRemoveTenant.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveTenant.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveTenant.Location = new System.Drawing.Point(650, 313);
             this.btnRemoveTenant.Name = "btnRemoveTenant";
             this.btnRemoveTenant.Size = new System.Drawing.Size(106, 53);
             this.btnRemoveTenant.TabIndex = 16;
             this.btnRemoveTenant.Text = "Remove Tenant";
-            this.btnRemoveTenant.UseVisualStyleBackColor = true;
+            this.btnRemoveTenant.UseVisualStyleBackColor = false;
             this.btnRemoveTenant.Click += new System.EventHandler(this.btnRemoveTenant_Click);
             // 
             // btnShowInfo
             // 
+            this.btnShowInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnShowInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowInfo.Location = new System.Drawing.Point(526, 329);
+            this.btnShowInfo.Location = new System.Drawing.Point(526, 313);
             this.btnShowInfo.Name = "btnShowInfo";
             this.btnShowInfo.Size = new System.Drawing.Size(105, 53);
             this.btnShowInfo.TabIndex = 15;
             this.btnShowInfo.Text = "Show Info";
-            this.btnShowInfo.UseVisualStyleBackColor = true;
+            this.btnShowInfo.UseVisualStyleBackColor = false;
             this.btnShowInfo.Click += new System.EventHandler(this.btnShowInfo_Click);
             // 
             // lbxTenants
             // 
+            this.lbxTenants.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxTenants.FormattingEnabled = true;
+            this.lbxTenants.ItemHeight = 16;
             this.lbxTenants.Location = new System.Drawing.Point(526, 78);
             this.lbxTenants.Name = "lbxTenants";
-            this.lbxTenants.Size = new System.Drawing.Size(230, 238);
+            this.lbxTenants.Size = new System.Drawing.Size(230, 228);
             this.lbxTenants.TabIndex = 14;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(613, 42);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 17);
+            this.label9.Size = new System.Drawing.Size(67, 17);
             this.label9.TabIndex = 13;
             this.label9.Text = "Tenants";
             // 
             // btnAddTenant
             // 
-            this.btnAddTenant.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTenant.BackColor = System.Drawing.Color.Lime;
+            this.btnAddTenant.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddTenant.ForeColor = System.Drawing.Color.Black;
             this.btnAddTenant.Location = new System.Drawing.Point(218, 214);
             this.btnAddTenant.Name = "btnAddTenant";
             this.btnAddTenant.Size = new System.Drawing.Size(106, 41);
             this.btnAddTenant.TabIndex = 12;
             this.btnAddTenant.Text = "Add Tenant";
-            this.btnAddTenant.UseVisualStyleBackColor = true;
+            this.btnAddTenant.UseVisualStyleBackColor = false;
             this.btnAddTenant.Click += new System.EventHandler(this.btnAddTenant_Click);
             // 
             // label8
@@ -408,43 +433,49 @@
             // 
             // tbxAge
             // 
+            this.tbxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxAge.Location = new System.Drawing.Point(371, 85);
             this.tbxAge.Name = "tbxAge";
-            this.tbxAge.Size = new System.Drawing.Size(128, 20);
+            this.tbxAge.Size = new System.Drawing.Size(128, 23);
             this.tbxAge.TabIndex = 5;
             // 
             // tbxCourse
             // 
+            this.tbxCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxCourse.Location = new System.Drawing.Point(206, 154);
             this.tbxCourse.Name = "tbxCourse";
-            this.tbxCourse.Size = new System.Drawing.Size(128, 20);
+            this.tbxCourse.Size = new System.Drawing.Size(128, 23);
             this.tbxCourse.TabIndex = 4;
             // 
             // tbxSchool
             // 
+            this.tbxSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxSchool.Location = new System.Drawing.Point(25, 154);
             this.tbxSchool.Name = "tbxSchool";
-            this.tbxSchool.Size = new System.Drawing.Size(128, 20);
+            this.tbxSchool.Size = new System.Drawing.Size(128, 23);
             this.tbxSchool.TabIndex = 3;
             // 
             // tbxLastName
             // 
+            this.tbxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxLastName.Location = new System.Drawing.Point(206, 85);
             this.tbxLastName.Name = "tbxLastName";
-            this.tbxLastName.Size = new System.Drawing.Size(128, 20);
+            this.tbxLastName.Size = new System.Drawing.Size(128, 23);
             this.tbxLastName.TabIndex = 1;
             // 
             // tbxFirstName
             // 
+            this.tbxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbxFirstName.Location = new System.Drawing.Point(25, 85);
             this.tbxFirstName.Name = "tbxFirstName";
-            this.tbxFirstName.Size = new System.Drawing.Size(128, 20);
+            this.tbxFirstName.Size = new System.Drawing.Size(128, 23);
             this.tbxFirstName.TabIndex = 0;
             // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(798, 423);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

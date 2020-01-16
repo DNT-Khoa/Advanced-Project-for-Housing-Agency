@@ -31,6 +31,7 @@ namespace Software_housing_project
             
             //Can file complaint as far as a year in the past and a year in the future.
             DateTime startOfPeriod = new DateTime(DateTime.Now.Year - 1, DateTime.Now.Month, DateTime.Now.Day);
+
             //Can arrange events up to a year in the future.
             DateTime startOfPeriodEvents = new DateTime(DateTime.Now.Year + 1, DateTime.Now.Month, DateTime.Now.Day);
             mcEvents.MaxDate = DateTime.ParseExact(startOfPeriodEvents.ToShortDateString(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -79,7 +80,7 @@ namespace Software_housing_project
                 }
                 else
                 {
-                    MessageBox.Show("The same person should not do the same chore on the same day more than one time ! Do you think so ?");
+                    MessageBox.Show("The same person should not do the same chore on the same day more than one time! Do you think so?");
                 }
                 
             }    
@@ -270,5 +271,6 @@ namespace Software_housing_project
             this.clbChores.Items.Remove(this.clbChores.SelectedItem);
             parentForm.UpdateChores();
         }
+
     }
 }

@@ -42,29 +42,31 @@
             this.cbxUserType.Items.AddRange(new object[] {
             "Student",
             "Employee"});
-            this.cbxUserType.Location = new System.Drawing.Point(78, 157);
-            this.cbxUserType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxUserType.Location = new System.Drawing.Point(104, 193);
+            this.cbxUserType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxUserType.Name = "cbxUserType";
-            this.cbxUserType.Size = new System.Drawing.Size(110, 21);
+            this.cbxUserType.Size = new System.Drawing.Size(145, 24);
             this.cbxUserType.TabIndex = 1;
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(78, 193);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Location = new System.Drawing.Point(104, 238);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(110, 39);
+            this.btnLogin.Size = new System.Drawing.Size(147, 48);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(92, 138);
+            this.label1.Location = new System.Drawing.Point(136, 174);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 4;
@@ -73,26 +75,28 @@
             // pbxUserIcon
             // 
             this.pbxUserIcon.Image = global::Software_housing_project.Properties.Resources.avatar;
-            this.pbxUserIcon.Location = new System.Drawing.Point(78, 11);
-            this.pbxUserIcon.Margin = new System.Windows.Forms.Padding(2);
+            this.pbxUserIcon.Location = new System.Drawing.Point(104, 14);
+            this.pbxUserIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxUserIcon.Name = "pbxUserIcon";
-            this.pbxUserIcon.Size = new System.Drawing.Size(110, 115);
+            this.pbxUserIcon.Size = new System.Drawing.Size(147, 142);
             this.pbxUserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxUserIcon.TabIndex = 3;
             this.pbxUserIcon.TabStop = false;
             // 
-            // Login
+            // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(252, 243);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(351, 309);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbxUserIcon);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.cbxUserType);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Login";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "LoginForm";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserIcon)).EndInit();
             this.ResumeLayout(false);

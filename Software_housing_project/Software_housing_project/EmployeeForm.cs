@@ -70,7 +70,7 @@ namespace Software_housing_project
         {
             if (rtbRulesToAdd.Text == "")
             {
-                MessageBox.Show("Did you forget to fill in the rule before trying to add it to the rule list ?");
+                MessageBox.Show("Did you forget to fill in the rule before trying to add it to the rule list?");
                 rtbRulesToAdd.Text = "";
             } else
             {
@@ -96,7 +96,7 @@ namespace Software_housing_project
         {
             if (lbxRules.SelectedIndex < 0)
             {
-                MessageBox.Show("Please choose a rule to be removed from the list !");
+                MessageBox.Show("Please choose a rule to be removed from the list!");
             } else
             {
                 parentForm.House.Rules.RemoveAt(lbxRules.SelectedIndex);
@@ -117,22 +117,22 @@ namespace Software_housing_project
 
             if (tenantFirstName == "")
             {
-                MessageBox.Show("Please indicate the first name of the tenant !");
+                MessageBox.Show("Please indicate the first name of the tenant!");
             } else if (tenantLastName == "")
             {
-                MessageBox.Show("Please indicate the last name of the tenant !");
+                MessageBox.Show("Please indicate the last name of the tenant!");
             } else if (tenantSchool == "")
             {
-                MessageBox.Show("Did you forget to fill in the school field ?");
+                MessageBox.Show("Did you forget to fill in the school field?");
             } else if (tenantCourse == "")
             {
-                MessageBox.Show("You need to fill the name of the course !");
+                MessageBox.Show("You need to fill the name of the course!");
             } else if (tbxAge.Text == "")
             {
-                MessageBox.Show("I wonder what is the age of the tenant ?");
+                MessageBox.Show("I wonder what is the age of the tenant?");
             } else if (!isInteger)
             {
-                MessageBox.Show("The age you enter is not an integer !");
+                MessageBox.Show("The age you enter is not an integer!");
                 tbxAge.Text = "";
             } 
             else
@@ -140,7 +140,7 @@ namespace Software_housing_project
                 tenantAge = Convert.ToInt32(tbxAge.Text);
                 if (tenantAge <= 0)
                 {
-                    MessageBox.Show("Either you are not existing or you are making a mistake !?");
+                    MessageBox.Show("Either you are not existing or you are making a mistake!?");
                     tbxAge.Text = "";
                 }
                 else if (tenantAge > 100)
@@ -167,7 +167,7 @@ namespace Software_housing_project
         {
             if (lbxTenants.SelectedIndex < 0)
             {
-                MessageBox.Show("Please select a tenant to retrieve information from !");
+                MessageBox.Show("Please select a tenant to retrieve information from!");
             } else
             {
                 MessageBox.Show(parentForm.House.Tenants[lbxTenants.SelectedIndex].GetInfo());
