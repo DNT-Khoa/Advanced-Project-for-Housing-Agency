@@ -41,6 +41,15 @@ namespace Software_housing_project
             UpdateChoresDescriptions();
         }
 
+        public void UpdateChores()
+        {
+            clbChores.Items.Clear();
+            foreach (var chore in parentForm.House.Chores)
+            {
+                clbChores.Items.Add(chore.GetInfo());
+            }
+        }
+
         private void FillDefaultTenants()
         {
             parentForm.House.Tenants.Add(new Student("Marta", "Alston", 15, "Fontys", "ICT"));

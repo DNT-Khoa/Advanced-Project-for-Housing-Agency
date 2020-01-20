@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.cbxUserType = new System.Windows.Forms.ComboBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pbxUserIcon = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.timerTrash = new System.Windows.Forms.Timer(this.components);
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +49,7 @@
             this.cbxUserType.Location = new System.Drawing.Point(103, 278);
             this.cbxUserType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxUserType.Name = "cbxUserType";
-            this.cbxUserType.Size = new System.Drawing.Size(147, 24);
+            this.cbxUserType.Size = new System.Drawing.Size(147, 28);
             this.cbxUserType.TabIndex = 1;
             // 
             // btnLogin
@@ -69,7 +72,7 @@
             this.label1.Location = new System.Drawing.Point(131, 248);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 17);
+            this.label1.Size = new System.Drawing.Size(95, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Select Role";
             // 
@@ -90,13 +93,22 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(336, 36);
+            this.label2.Size = new System.Drawing.Size(428, 46);
             this.label2.TabIndex = 5;
             this.label2.Text = "Welcome to HouseMate!";
             // 
+            // timerTrash
+            // 
+            this.timerTrash.Interval = 1000;
+            this.timerTrash.Tick += new System.EventHandler(this.timerTrash_Tick);
+            // 
+            // serialPort1
+            // 
+            this.serialPort1.PortName = "COM3";
+            // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(376, 379);
@@ -110,6 +122,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginForm";
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUserIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -123,5 +137,7 @@
         private System.Windows.Forms.PictureBox pbxUserIcon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timerTrash;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }

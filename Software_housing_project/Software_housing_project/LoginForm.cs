@@ -64,6 +64,7 @@ namespace Software_housing_project
         public void UpdateChores()
         {
             ef.UpdateChores();
+            sf.UpdateChores();
         }
 
         public void UpdateComplaints()
@@ -78,6 +79,36 @@ namespace Software_housing_project
             {
                 sf.UpdateCheckBoxStudentsName();
             }
+        }
+
+        private void timerTrash_Tick(object sender, EventArgs e)
+        {
+            if(serialPort1.BytesToRead > 0) {
+                if(serialPort1.ReadLine() == "t")
+                {
+                    for (int i = 0; i < House.Chores.Count; i++)
+                    {
+                        if(House.Chores[i].getChoreDescription() == "Take out the garbage.")
+                        {
+                            House.Chores.RemoveAt(i);
+                            MessageBox.Show("Trash collected");
+                            UpdateChores();
+                        } 
+                    }
+                }
+            }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            serialPort1.Open();
+            timerTrash.Start();
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {          
+            serialPort1.Close();
+            timerTrash.Stop();
         }
     }
 }
