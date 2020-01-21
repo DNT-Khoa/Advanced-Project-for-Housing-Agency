@@ -84,11 +84,12 @@ namespace Software_housing_project
         private void timerTrash_Tick(object sender, EventArgs e)
         {
             UpdateChores();
+            //UpdateComplaints();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            serialPort1.Open();
+            //serialPort1.Open();
             timerTrash.Start();
         }
 

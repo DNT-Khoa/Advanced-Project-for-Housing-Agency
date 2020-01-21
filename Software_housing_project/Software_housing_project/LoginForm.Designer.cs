@@ -49,7 +49,7 @@
             this.cbxUserType.Location = new System.Drawing.Point(103, 278);
             this.cbxUserType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbxUserType.Name = "cbxUserType";
-            this.cbxUserType.Size = new System.Drawing.Size(147, 33);
+            this.cbxUserType.Size = new System.Drawing.Size(147, 24);
             this.cbxUserType.TabIndex = 1;
             // 
             // btnLogin
@@ -72,7 +72,7 @@
             this.label1.Location = new System.Drawing.Point(131, 248);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 25);
+            this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Select Role";
             // 
@@ -93,7 +93,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(509, 54);
+            this.label2.Size = new System.Drawing.Size(336, 36);
             this.label2.TabIndex = 5;
             this.label2.Text = "Welcome to HouseMate!";
             // 
@@ -109,7 +109,7 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(376, 379);
@@ -121,6 +121,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximumSize = new System.Drawing.Size(392, 418);
+            this.MinimumSize = new System.Drawing.Size(392, 418);
             this.Name = "LoginForm";
             this.Text = "Login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);

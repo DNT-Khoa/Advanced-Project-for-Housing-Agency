@@ -491,6 +491,8 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(804, 534);
+            this.MinimumSize = new System.Drawing.Size(804, 534);
             this.Name = "EmployeeForm";
             this.Text = "HouseMate";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
