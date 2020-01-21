@@ -62,7 +62,7 @@ namespace Software_housing_project
 
         public void UpdateChores()
         {
-            
+            lbxChores.Items.Clear();
             if(parentForm.House.Chores.Count > 0)
             {
                 lbxChores.Items.Clear();
