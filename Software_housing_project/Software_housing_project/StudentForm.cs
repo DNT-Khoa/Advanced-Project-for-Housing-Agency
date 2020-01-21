@@ -44,10 +44,14 @@ namespace Software_housing_project
         public void UpdateChores()
         {
             clbChores.Items.Clear();
-            foreach (var chore in parentForm.House.Chores)
+            if(parentForm.House.Chores.Count > 0)
             {
-                clbChores.Items.Add(chore.GetInfo());
+                foreach (var chore in parentForm.House.Chores)
+                {
+                    clbChores.Items.Add(chore.GetInfo());
+                }
             }
+            
         }
 
         private void FillDefaultTenants()

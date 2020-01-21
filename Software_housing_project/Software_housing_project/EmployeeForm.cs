@@ -60,10 +60,13 @@ namespace Software_housing_project
         public void UpdateChores()
         {
             lbxChores.Items.Clear();
-            foreach (var chore in parentForm.House.Chores)
+            if(parentForm.House.Chores.Count > 0)
             {
-                lbxChores.Items.Add(chore.GetInfo());
-            }
+                foreach (Chore chore in parentForm.House.Chores)
+                {
+                    lbxChores.Items.Add(chore.GetInfo());
+                }
+            }            
         }
 
         private void btnAddToList_Click(object sender, EventArgs e)

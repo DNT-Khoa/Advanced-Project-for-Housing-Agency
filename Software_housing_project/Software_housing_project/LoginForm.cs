@@ -83,20 +83,7 @@ namespace Software_housing_project
 
         private void timerTrash_Tick(object sender, EventArgs e)
         {
-            if(serialPort1.BytesToRead > 0) {
-                if(serialPort1.ReadLine() == "t")
-                {
-                    for (int i = 0; i < House.Chores.Count; i++)
-                    {
-                        if(House.Chores[i].getChoreDescription() == "Take out the garbage.")
-                        {
-                            House.Chores.RemoveAt(i);
-                            MessageBox.Show("Trash collected");
-                            UpdateChores();
-                        } 
-                    }
-                }
-            }
+            UpdateChores();
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -110,5 +97,25 @@ namespace Software_housing_project
             serialPort1.Close();
             timerTrash.Stop();
         }
+
+        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        {
+            if (serialPort1.BytesToRead > 0)
+            {
+                if (serialPort1.ReadLine().Trim() == "t")
+                {
+                    for (int i = 0; i < House.Chores.Count; i++)
+                    {
+                        if (House.Chores[i].getChoreDescription() == "Take out the garbage.")
+                        {
+                            House.Chores.RemoveAt(i);
+                            MessageBox.Show("Trash collected");
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
