@@ -54,14 +54,18 @@ namespace Software_housing_project
 
         public void UpdateComplaints()
         {
-            rtbComplaint.Text = parentForm.House.Complaints[complaintsIndex].GetInfo();
+            rtbComplaint.Clear();
+            if (parentForm.House.Complaints.Count > 0)
+                rtbComplaint.Text = parentForm.House.Complaints[complaintsIndex].GetInfo();
+
         }
 
         public void UpdateChores()
         {
-            lbxChores.Items.Clear();
+            
             if(parentForm.House.Chores.Count > 0)
             {
+                lbxChores.Items.Clear();
                 foreach (Chore chore in parentForm.House.Chores)
                 {
                     lbxChores.Items.Add(chore.GetInfo());
@@ -234,15 +238,20 @@ namespace Software_housing_project
             {
                 MessageBox.Show("List is already empty");
             }
-           
+            complaintsIndex = 0;
         }
 
         private void btnClearSelected_Click(object sender, EventArgs e)
         {
-            if(parentForm.House.Complaints.Count > complaintsIndex)
+            if(parentForm.House.Complaints.Count > 0)
             {
                 parentForm.House.Complaints.RemoveAt(complaintsIndex);
-                UpdateComplaints();
+                complaintsIndex--;
+                if (complaintsIndex < 0)
+                {
+                    complaintsIndex = 0;
+                }
+                parentForm.UpdateComplaints();
             }
             else
             {

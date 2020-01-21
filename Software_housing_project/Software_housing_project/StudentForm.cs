@@ -273,8 +273,14 @@ namespace Software_housing_project
 
         public void UpdateComplaints()
         {
+            complaintTracker = parentForm.House.Complaints.Count - 1;
+            if (complaintTracker < 0)
+            {
+                complaintTracker = 0;
+            }
             rtbComplaints.Clear();
-            rtbComplaints.Text = parentForm.House.Complaints[complaintTracker].GetInfo();
+            if (parentForm.House.Complaints.Count > 0) 
+                rtbComplaints.Text = parentForm.House.Complaints[complaintTracker].GetInfo();
         }
         
         

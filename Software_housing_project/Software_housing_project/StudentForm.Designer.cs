@@ -82,6 +82,7 @@
             this.tcTabControl.Controls.Add(this.tpEvents);
             this.tcTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcTabControl.Location = new System.Drawing.Point(0, 71);
+            this.tcTabControl.MaximumSize = new System.Drawing.Size(728, 356);
             this.tcTabControl.Name = "tcTabControl";
             this.tcTabControl.SelectedIndex = 0;
             this.tcTabControl.Size = new System.Drawing.Size(728, 356);
@@ -153,7 +154,7 @@
             this.clbChores.ItemHeight = 16;
             this.clbChores.Location = new System.Drawing.Point(412, 44);
             this.clbChores.Name = "clbChores";
-            this.clbChores.Size = new System.Drawing.Size(302, 212);
+            this.clbChores.Size = new System.Drawing.Size(302, 260);
             this.clbChores.TabIndex = 4;
             this.clbChores.DoubleClick += new System.EventHandler(this.clbChores_DoubleClick);
             // 
@@ -161,7 +162,7 @@
             // 
             this.btnAddChore.BackColor = System.Drawing.Color.Lime;
             this.btnAddChore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddChore.Location = new System.Drawing.Point(17, 188);
+            this.btnAddChore.Location = new System.Drawing.Point(17, 236);
             this.btnAddChore.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddChore.Name = "btnAddChore";
             this.btnAddChore.Size = new System.Drawing.Size(138, 68);
@@ -515,6 +516,8 @@
             this.Controls.Add(this.tcTabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximumSize = new System.Drawing.Size(746, 466);
+            this.MinimumSize = new System.Drawing.Size(746, 466);
             this.Name = "StudentForm";
             this.Text = "HouseMate";
             this.tcTabControl.ResumeLayout(false);
