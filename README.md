@@ -7,7 +7,7 @@ Simple Windows Form Application created with C# and a small application of Ardui
 * [Screenshots](#screenshots)
 
 ## General info
-This project is organized at the end of the first semester in my first university year. I collaborated with the other two classmates to find a good software solution for a virtual housing agency company called **BV Housing Company*
+This project is organized at the end of the first semester in my first university year. I collaborated with the other two classmates to find a good software solution for a virtual housing agency company called **BV Housing Company**
 
 You can better understand the project by reading the Project Analysis in the files I uploaded !
 
