@@ -17,13 +17,13 @@ You can better understand the project by reading the Project Analysis in the fil
 
 ## Screenshots
 ![Login Page](https://github.com/DNT-Khoa/Advanced-Project-for-Housing-Agency/blob/master/images/Login%20Page%20Housemate.PNG)
-- Login as a student:
+##### Login as a student:
 ![Chore Student](https://github.com/DNT-Khoa/Advanced-Project-for-Housing-Agency/blob/master/images/Chore%20Student.PNG)
 ![Complaint Student](https://github.com/DNT-Khoa/Advanced-Project-for-Housing-Agency/blob/master/images/Complain%20Student.PNG)
 ![Rules Student](https://github.com/DNT-Khoa/Advanced-Project-for-Housing-Agency/blob/master/images/Rule%20Student.PNG)
 ![Events Student](https://github.com/DNT-Khoa/Advanced-Project-for-Housing-Agency/blob/master/images/Events%20Student.PNG)
 
-- Login as an employee:
+##### Login as an employee:
 ![Chore Employee](https://github.com/DNT-Khoa/Advanced-Project-for-Housing-Agency/blob/master/images/Chore%20Employee.PNG)
 ![Complaint Employee](https://github.com/DNT-Khoa/Advanced-Project-for-Housing-Agency/blob/master/images/Complaints%20Employee.PNG)
 ![Rules Employee](https://github.com/DNT-Khoa/Advanced-Project-for-Housing-Agency/blob/master/images/Rules%20Employee.PNG)
