@@ -5,6 +5,8 @@ Simple Windows Form Application created with C# and a small application of Ardui
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Screenshots](#screenshots)
+* [Status](#status)
+* [Contributors](#contributors)
 
 ## General info
 This project is organized at the end of the first semester in my first university year. I collaborated with the other two classmates to find a good software solution for a virtual housing agency company called **BV Housing Company**
@@ -34,3 +36,11 @@ You can better understand the project by reading the Project Analysis in the fil
 ![Complaint Employee](https://github.com/DNT-Khoa/Advanced-Project-for-Housing-Agency/blob/master/images/Complaints%20Employee.PNG)
 ![Rules Employee](https://github.com/DNT-Khoa/Advanced-Project-for-Housing-Agency/blob/master/images/Rules%20Employee.PNG)
 ![Tenants Employee](https://github.com/DNT-Khoa/Advanced-Project-for-Housing-Agency/blob/master/images/Tenant%20Employee.PNG)
+
+## Status: 
+Completed
+
+## Contributors:
+- Georgie Nikolov
+- Khoa Doan
+- Daniel Vaswani
